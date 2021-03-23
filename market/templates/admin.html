@@ -2,11 +2,43 @@
 {% block title %}
     Admin page
 {% endblock %}
+<head>
+  <!-- Customized CSS -->
+  <link rel= "stylesheet" type= "text/css" href= "/egrocery/market/static/styles/styles.css">
+</head>
 
 {% block content %}
 <body class="text-center">
     <div class="container">
         <h1>ADMIN PANEL</h1>
     </div>
+    <div class="n-container">
+        <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Product Management</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Offer Management</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Orders & Shipments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Update Information</a>
+            </li>
+          </ul>
+    </div>
+
+    <!-- Javascript to make the newly clicked tab the "active" tab -->
+    <!-- JavaScript JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <script>
+      // document.querySelector(".nav li").classList.add("active");
+        $(".nav li a").on("click", function() {
+            $(".nav li a").removeClass("active");
+            $(this).addClass("active");
+        });
+    </script>
 </body>
 {% endblock %}
