@@ -1,3 +1,25 @@
 body {
     background-color: #F2F2EA;
 }
+
+/* Admin Page alterations */
+.active {
+}
+
+/* All anchor elements inside nav-item classes */
+.n-container .nav-link{
+    background-color: #C4C4C4;
+    text-align: center;
+    color: black;
+    /* line-height: 5.5rem; */
+    height: 5.5rem;
+}
+
+/* Changing the active color of the nav-item tabs in Admin Page */
+.nav-pills > li > .active, .nav-pills > li > .active:hover, .nav-pills > li > .active:focus {
+    background-color:#D4B563!important;
+}
+
+.custom {
+    size: 100;
+}
