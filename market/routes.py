@@ -1,6 +1,6 @@
 from market import app
 from flask import render_template, redirect, url_for, flash, request
-from market.models import Item, User
+from market.models import Products, User
 from market.forms import RegisterForm, LoginForm, PurchaseItemForm
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
@@ -15,21 +15,22 @@ def home_page():
 @app.route('/market', methods=['GET', 'POST'])
 @login_required
 def market_page():
-    purchase_form = PurchaseItemForm()
-    if request.method == "POST":
-        # Purchase Item Logic
-        purchased_item = request.form.get('purchased_item')
-        p_item_object = Item.query.filter_by(name=purchased_item).first()
-        if p_item_object:
-            p_item_object.buy(current_user)
-            flash(
-                f"Congratulations! You purchased {p_item_object.name} for {p_item_object.price}$", category='success')
-        return redirect(url_for('market_page'))
+    return render_template('market.html')
+#     purchase_form = PurchaseItemForm()
+#     if request.method == "POST":
+#         # Purchase Item Logic
+#         purchased_item = request.form.get('purchased_item')
+#         p_item_object = Item.query.filter_by(name=purchased_item).first()
+#         if p_item_object:
+#             p_item_object.buy(current_user)
+#             flash(
+#                 f"Congratulations! You purchased {p_item_object.name} for {p_item_object.price}$", category='success')
+#         return redirect(url_for('market_page'))
 
-    if request.method == "GET":
-        items = Item.query.filter_by(owner=None)
-        owned_items = Item.query.filter_by(owner=current_user.id)
-        return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items)
+#     if request.method == "GET":
+#         items = Item.query.filter_by(owner=None)
+#         owned_items = Item.query.filter_by(owner=current_user.id)
+#         return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -78,3 +79,26 @@ def logout_page():
     logout_user()
     flash("You have been logged out.", category='info')
     return redirect(url_for("home_page"))
+
+@app.route('/catalog', methods=['GET', 'POST'])
+def catalog():
+    purchase_form = PurchaseItemForm()
+    # if request.method == "POST":
+    #     # Purchase Item Logic
+    #     purchased_item = request.form.get('purchased_item')
+    #     p_item_object = Item.query.filter_by(name=purchased_item).first()
+    #     if p_item_object:
+    #         p_item_object.buy(current_user)
+    #         flash(
+    #             f"Congratulations! You purchased {p_item_object.name} for {p_item_object.price}$", category='success')
+    #     return redirect(url_for('market_page'))
+
+    if request.method == "GET":
+        # items = Products.query.filter_by(id=50)
+        items = Products.query.limit(50).all()
+        # owned_items = Item.query.filter_by(owner=current_user.id)
+        return render_template('catalog.html', items=items, purchase_form=purchase_form)
+
+@app.route('/sandbox')
+def sandbox():
+    return render_template('sandbox.html')

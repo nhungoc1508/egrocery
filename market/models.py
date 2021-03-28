@@ -11,7 +11,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(length=30), nullable=False, unique=True)
     email_address = db.Column(db.String(length=50), nullable=False, unique=True)
     password_hash = db.Column(db.String(length=60), nullable=False)
-    items = db.relationship('Item', backref='owned_user', lazy=True)
+    # items = db.relationship('Item', backref='owned_user', lazy=True)
 
     @property
     def password(self):
@@ -24,13 +24,14 @@ class User(db.Model, UserMixin):
     def check_password_correction(self, attempted_password):
         return bcrypt.check_password_hash(self.password_hash, attempted_password)
 
-class Item(db.Model):
+# class Item(db.Model):
+class Products(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(length=30), nullable=False, unique=True)
     price = db.Column(db.Integer(), nullable=False)
-    barcode = db.Column(db.String(length=12), nullable=False, unique=True)
+    # barcode = db.Column(db.String(length=12), nullable=False, unique=True)
     description = db.Column(db.String(length=1024), nullable=False, unique=True)
-    owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
+    # owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
     def __repr__(self):
         return f'Item {self.name}'
 
