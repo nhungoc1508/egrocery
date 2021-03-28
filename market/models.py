@@ -25,8 +25,9 @@ class User(db.Model, UserMixin):
         return bcrypt.check_password_hash(self.password_hash, attempted_password)
 
 # class Item(db.Model):
-class Products(db.Model):
+class Products_new(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
+    kind = db.Column(db.String(length=30), nullable=False, unique=True)
     name = db.Column(db.String(length=30), nullable=False, unique=True)
     price = db.Column(db.Integer(), nullable=False)
     # barcode = db.Column(db.String(length=12), nullable=False, unique=True)

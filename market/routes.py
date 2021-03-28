@@ -1,6 +1,6 @@
 from market import app
 from flask import render_template, redirect, url_for, flash, request
-from market.models import Products, User
+from market.models import Products_new, User
 from market.forms import RegisterForm, LoginForm, PurchaseItemForm
 from market import db
 from flask_login import login_user, logout_user, login_required, current_user
@@ -81,6 +81,7 @@ def logout_page():
     return redirect(url_for("home_page"))
 
 @app.route('/catalog', methods=['GET', 'POST'])
+@login_required
 def catalog():
     purchase_form = PurchaseItemForm()
     # if request.method == "POST":
@@ -95,10 +96,14 @@ def catalog():
 
     if request.method == "GET":
         # items = Products.query.filter_by(id=50)
-        items = Products.query.limit(50).all()
+        items = Products_new.query.limit(200).all()
         # owned_items = Item.query.filter_by(owner=current_user.id)
         return render_template('catalog.html', items=items, purchase_form=purchase_form)
 
 @app.route('/sandbox')
 def sandbox():
     return render_template('sandbox.html')
+
+@app.route('/tryout')
+def tryout():
+    return render_template('tryout.html')
