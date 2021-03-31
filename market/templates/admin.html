@@ -29,7 +29,9 @@
           </ul>
     </div>
 
-    <div class="container">
+
+    <!-- Product Tab Container -->
+    <div class="tab-container product-tab">
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
@@ -62,16 +64,135 @@
       </table>
     </div>
 
+    <!-- Offers Tab Container -->
+    <div class="tab-container offers-tab">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Offers</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+
+    <!-- Orders Tab Container -->
+    <div class="tab-container orders-tab">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Orders</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Info Tab Container -->
+    <div class="tab-container info-tab">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Info</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <!-- Javascript to make the newly clicked tab the "active" tab -->
     <!-- JavaScript JQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <script>
-      // document.querySelector(".nav li").classList.add("active");
+      showCorrectContent();
         $(".nav li a").on("click", function() {
             $(".nav li a").removeClass("active");
             $(this).addClass("active");
+            showCorrectContent();
         });
+
+        // Displays content based on which tab is selected
+        function showCorrectContent() {
+          switch($(".active").text()) {
+            case "Product Management":
+              $(".product-tab").show();
+              $(".info-tab").hide();
+              $(".offers-tab").hide();
+              $(".orders-tab").hide();
+              break;
+
+            case("Offer Management"):
+              $(".product-tab").hide();
+              $(".info-tab").hide();
+              $(".offers-tab").show();
+              $(".orders-tab").hide();
+              break;
+
+            case("Orders & Shipments"):
+              $(".product-tab").hide();
+              $(".info-tab").hide();
+              $(".offers-tab").hide();
+              $(".orders-tab").show();
+              break;
+            
+            case("Update Information"):
+              $(".product-tab").hide();
+              $(".info-tab").show();
+              $(".offers-tab").hide();
+              $(".orders-tab").hide(); 
+              break;
+
+            default:
+              alert("Other tab selected")
+          }
+        }
     </script>
 </body>
 {% endblock %}

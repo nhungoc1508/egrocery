@@ -3,8 +3,6 @@ body {
 }
 
 /* Admin Page alterations */
-.active {
-}
 
 /* All anchor elements inside nav-item classes */
 .n-container .nav-link{
@@ -17,9 +15,6 @@ body {
 
 /* Changing the active color of the nav-item tabs in Admin Page */
 .nav-pills > li > .active, .nav-pills > li > .active:hover, .nav-pills > li > .active:focus {
+    /* !important is necessary for this code and I'm not sure what is does... */
     background-color:#D4B563!important;
-}
-
-.custom {
-    size: 100;
 }
