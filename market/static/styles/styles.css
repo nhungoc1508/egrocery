@@ -18,3 +18,17 @@ body {
     /* !important is necessary for this code and I'm not sure what is does... */
     background-color:#D4B563!important;
 }
+
+.admin-title {
+    padding: 1.5rem 0%;
+}
+
+.nav-item {
+    padding: auto;
+}
+
+.tab-container {
+    display: block;
+    width: 80%;
+    margin:auto;
+}

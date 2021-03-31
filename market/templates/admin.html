@@ -9,7 +9,7 @@
 
 {% block content %}
 <body class="text-center">
-    <div class="container">
+    <div class="container admin-title">
         <h1>ADMIN PANEL</h1>
     </div>
     <div class="n-container">
@@ -32,11 +32,16 @@
 
     <!-- Product Tab Container -->
     <div class="tab-container product-tab">
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductModal">Add New Product</button>
+
+      <button class="btn btn-primary">Upload Inventory File (.csv)</button>
+
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
+            <th scope="col">Product Name</th>
             <th scope="col">Last</th>
             <th scope="col">Handle</th>
           </tr>
@@ -62,6 +67,40 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- Pop-up Modal to Add a New Product -->
+    <div class="modal fade" id="newProductModal" tabindex="-1" role="dialog" aria-labelledby="newProductModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newProductModalLabel">Add New Product</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="product-name" class="col-form-label">Product Name:</label>
+                <input type="text" class="form-control" id="product-name">
+              </div>
+              <div class="form-group">
+                <label for="quantity-text" class="col-form-label">Quantity:</label>
+                <input type="text" class="form-control" id="quantity-text"></input>
+              </div>
+              <div class="form-group">
+                <label for="price-text" class="col-form-label">Price per unit:</label>
+                <input type="text" class="form-control" id="price-text"></input>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" id="saveToCatalog-button" class="btn btn-primary">Save to Catalog</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Offers Tab Container -->
@@ -146,6 +185,9 @@
       </table>
     </div>
 
+
+    
+
     <!-- Javascript to make the newly clicked tab the "active" tab -->
     <!-- JavaScript JQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -193,6 +235,19 @@
               alert("Other tab selected")
           }
         }
+
+        // Modal pop-up to add new product
+        $('#newProductModal').on('show.bs.modal', function (event) {
+          var button = $(event.relatedTarget) // Button that triggered the modal
+          var recipient = button.data('whatever') // Extract info from data-* attributes
+          
+          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+          var modal = $(this)
+          modal.find('.modal-title').text('New message to ' + recipient)
+          modal.find('.modal-body input').val(recipient)
+          // $("#saveToCatalogue-button").
+        })
     </script>
 </body>
 {% endblock %}
