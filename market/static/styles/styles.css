@@ -21,10 +21,16 @@ body {
 
 .admin-title {
     padding: 1.5rem 0%;
+    background-color: #E5E5E5;
+}
+
+.admin-title h1 {
+    font-weight: bold;
 }
 
 .nav-item {
     padding: auto;
+    vertical-align: middle;
 }
 
 .tab-container {
