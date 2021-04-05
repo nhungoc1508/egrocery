@@ -9,12 +9,13 @@
 
 {% block content %}
 <body class="text-center">
-    <div class="container admin-title">
+    <!-- Container Fluid  -->
+    <div class="container-fluid admin-title">
         <h1>ADMIN PANEL</h1>
     </div>
     <div class="n-container">
         <ul class="nav nav-pills nav-justified">
-            <li class="nav-item">
+            <li class="nav-item align-middle">
               <a class="nav-link active" aria-current="page" href="#">Product Management</a>
             </li>
             <li class="nav-item">
@@ -36,11 +37,12 @@
 
     <!-- Product Tab Container -->
     <div class="tab-container product-tab">
-
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newProductModal">Add New Product</button>
-
-      <button class="btn btn-primary">Upload Inventory File (.csv)</button>
-
+      <!-- Buttons -->
+      <div class="container-fluid admin-btn-container">
+        <button type="button" class="btn btn-primary admin-btn-modal btn-lg" data-toggle="modal" id="btnShowProductModal">Add New Product</button>
+        <button class="btn btn-primary admin-btn-modal btn-lg" data-toggle="modal" data-target="#newInventoryModal">Upload Inventory File (.csv)</button>
+      </div>  
+      <!-- Table -->
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
@@ -49,6 +51,11 @@
             <th scope="col">Quantity</th>
             <th scope="col">Price Per Unit</th>
             <th scope="col">Actions</th>
+            <!-- ID -->
+            <!-- Category -->
+            <!-- Image -->
+            <!-- Url -->
+            <!-- ^^^ TO BE ADDED SOON -->
           </tr>
         </thead>
         <tbody>
@@ -103,11 +110,44 @@
                 <label for="price-text" class="col-form-label">Price per unit:</label>
                 <input type="text" class="form-control" id="price-text"></input>
               </div>
+
+              <!-- ID -->
+              <!-- Category -->
+              <!-- Image -->
+              <!-- Url -->
+              <!-- ^^^ TO BE ADDED SOON -->
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+            <button type="button" id="saveToCatalog-button" class="btn btn-primary">Save to Catalog</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pop-up Modal to Add a New Inventory -->
+    <div class="modal fade" id="newInventoryModal" tabindex="-1" role="dialog" aria-labelledby="newInventoryModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newInventoryModalLabel">Add New Inventory</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group"> 
+                <label class="form-label" for="inventoryFile">Select an Inventory file (.csv) to upload. **Will this replace the existing database or append to it? Should there be options for either?</label>
+                <input type="file" class="form-control" id="inventoryFile" />
+              </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" id="saveToCatalog-button" class="btn btn-primary">Save to Catalog</button>
+            <button type="button" id="saveInventory-button" class="btn btn-primary">Append to Database</button>
           </div>
         </div>
       </div>
@@ -115,11 +155,11 @@
 
 
 
-
-
     <!-- Offers Tab Container -->
     <div class="tab-container offers-tab">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newOfferModal">Add New Offer</button>
+      <div class="container-fluid admin-btn-container">
+        <button type="button" class="btn btn-primary btn-lg admin-btn-modal" data-toggle="modal" data-target="#newOfferModal">Add New Offer</button>
+      </div>
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
@@ -188,7 +228,9 @@
 
     <!-- Orders Tab Container -->
     <div class="tab-container orders-tab">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newOrderModal">Add New Order</button>
+      <div class="container-fluid admin-btn-container">
+        <button type="button" class="btn btn-primary btn-lg admin-btn-modal" data-toggle="modal" data-target="#newOrderModal">Add New Order</button>
+      </div>
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
@@ -246,7 +288,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" id="saveToCatalog-button" class="btn btn-primary">Save to Catalog</button>
+            <button type="button" id="saveOrder-button" class="btn btn-primary">Save Order</button>
           </div>
         </div>
       </div>
@@ -257,16 +299,20 @@
 
     <!-- Info Tab Container -->
     <div class="tab-container info-tab">
-      <h3 id="website-info-header">Update Website Information</h3>
+      <h3 id="admin-info-header">Update Website Information</h3>
       <div class="about-group">
         <h4>About Us Information</h4>
-        <textarea class="form-control" id="aboutus-text"></textarea>
-        <button class="btn btn-primary aboutus-button">Save</button>
+        <textarea class="form-control about-textarea" id="aboutus-text"></textarea>
+        <div class="about-saveinfo">
+          <button class="btn btn-primary btn-lg admin-saveinfo-btn">Save</button>
+        </div>
       </div>
       <div class="about-group">
         <h4>Contact Information</h4>
-        <textarea class="form-control" id="contact-text"></textarea>
-        <button class="btn btn-primary contact-button">Save</button>
+        <textarea class="form-control about-textarea" id="contact-text"></textarea>
+        <div class="about-saveinfo">
+          <button class="btn btn-primary btn-lg admin-saveinfo-btn">Save</button>
+        </div>
       </div>
     </div>
 
@@ -277,7 +323,8 @@
     <!-- JavaScript JQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-    <script>
+    <!-- Internal JavaScript -->
+    <script type="text/javascript">
       showCorrectContent();       // Should show correct content when initially loading
         $(".nav li a").on("click", function() {
             $(".nav li a").removeClass("active");
@@ -321,8 +368,18 @@
           }
         }
 
+        $("#btnShowProductModal").click(function() {
+          $("#newProductModal").modal('show');
+
+          // Why does this run an increasing amount of time based on the # of times the 'showModal' btn is clicked??
+          $("#newProductModal").on("shown.bs.modal", function(event) {
+            alert("showing");
+          });
+        });
+
         // Modal pop-up to add new product
-        $('#newProductModal').on('show.bs.modal', function (event) {
+        $('#newProductModal').on('shown.bs.modal', function (event) {
+          alert("hi")
           var button = $(event.relatedTarget) // Button that triggered the modal
           var recipient = button.data('whatever') // Extract info from data-* attributes
           
@@ -331,7 +388,10 @@
           var modal = $(this)
           modal.find('.modal-title').text('New message to ' + recipient)
           modal.find('.modal-body input').val(recipient)
-          // $("#saveToCatalogue-button").
+          // $("#saveToCatalogue-button").on("click", function () {
+          //   alert("Saved to Catalog.");
+          //   // Dismiss the modal pop-up
+          // });
         });
 
         // Modal pop-up to add new offer
