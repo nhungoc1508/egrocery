@@ -11,6 +11,10 @@ from flask_login import login_user, logout_user, login_required, current_user
 def home_page():
     return render_template('home.html')
 
+@app.route('/admin')
+def admin_page():
+    return render_template('admin.html')
+
 
 @app.route('/market', methods=['GET', 'POST'])
 @login_required

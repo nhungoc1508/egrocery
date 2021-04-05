@@ -1,3 +1,71 @@
 body {
     background-color: #F2F2EA;
 }
+
+/* Admin Page alterations -----------------------------------------------------------------------*/
+
+/* All nav-link anchor elements inside n-container classes */
+.n-container .nav-link{
+    background-color: #C4C4C4;
+    text-align: center;
+    color: black;
+    /* line-height: 5.5rem; */
+    padding: 2rem 0px;
+    height: 5.5rem;
+    font-size: 1.2em; /* 24px by default, depending on user's browser settings */
+}
+
+/* Changing the active color of the nav-item tabs in Admin Page */
+.nav-pills > li > .active, .nav-pills > li > .active:hover, .nav-pills > li > .active:focus {
+    /* !important is necessary for this code and I'm not sure what is does... */
+    background-color:#D4B563!important;
+}
+
+.admin-title {
+    padding: 1.5rem 0%;
+    background-color: #E5E5E5;
+}
+
+.admin-btn-container {
+    display: inline-block;
+    text-align: left;
+    padding-left: 0px;
+}
+
+.admin-btn-modal {
+    margin: 1.2rem 1.2rem 1.2rem 0;
+}
+
+/* The DIV that houses the save buttons */
+.about-saveinfo {
+    text-align: right;
+}
+
+.admin-saveinfo-btn {
+    margin-top: 10px;
+    width: 20%;
+}
+
+#admin-info-header {
+    font-weight: bold;
+}
+
+.admin-title h1 {
+    font-weight: bold;
+}
+
+.nav-item {
+    padding: auto;
+    vertical-align: middle;
+}
+
+.tab-container {
+    display: block;
+    width: 80%;
+    margin:auto;
+}
+
+.info-tab {
+    padding-top: 2.5rem;
+    text-align: left;
+}
