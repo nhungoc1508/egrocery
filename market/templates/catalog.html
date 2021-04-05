@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+Product catalog
+{% endblock %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/catalog.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+{% endblock %}
+{% block content %}
+ 
+<div class='page-header'>
+   <div class='row justify-content-center'>
+      <div class='h1 product-category'>Name of category</div>
+   </div>
+</div>
+<div class='container'>
+   <div class="d-flex flex-row flex-wrap justify-content-around">
+      {% for item in items %}
+      <div class='product-card' style="background: linear-gradient(to right, #F2F2EA, white)">
+         <a class="product-link" href="{{ item.img }}"></a>
+         <div class='product-img-ctn'>
+            <img src={{ item.img }} alt= {{ item.name }}>
+         </div>
+         <div class='circle'><img id ="shopping-cart-icon" src="../static/images/shopping-cart.png" alt='Shopping cart icon'></div>
+         <p class='product-name'>{{ item.kind }} <br> {{ item.name }}</p>
+         <p class='product-price'>AED {{ item.price }}</p>
+     </div>
+      {% endfor %}
+   </div>
+</div>
+{% endblock %}

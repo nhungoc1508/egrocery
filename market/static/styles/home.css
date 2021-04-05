@@ -1,0 +1,76 @@
+body, html {
+    height: 100%;
+}
+
+.navbar {
+    /* display: none; */
+    position: fixed;
+}
+
+.container-fluid, .container {
+    height: 100vh;
+    width: auto;
+    display: flex;
+}
+
+.nav-link {
+    font-family: 'Hammersmith One', sans-serif;
+    color: white;
+}
+
+.nav-link:hover {
+    color: #AF7F02;
+}
+
+#home {
+    background: url("../images/home_page.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#about {
+    background-image: url(../images/about-full.jpeg);
+    background-color: #F2F2EA;
+    color: white;
+}
+
+#contact {
+    background-color: white;
+}
+
+#contact-header {
+    background-image: url(../images/contact.jpeg);
+    background-position: top !important;
+}
+
+.media {
+    background-color: black;
+    height: 30vh;
+    width: 30vh;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.contact-block {
+    height: 30vh;
+    width: 40vh;
+}
+
+.page-header {
+    height: 30%;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-header-body {
+    height: 70%;
+    width: 100%;
+}

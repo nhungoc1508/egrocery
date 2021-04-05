@@ -1,13 +1,81 @@
 {% extends 'base.html' %}
 {% block title %}
-    Home page
+Home page
+{% endblock %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/home.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
 {% endblock %}
 {% block content %}
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <a class="btn btn-primary" href="{{ url_for('market_page') }}">Start browsing</a>
+
+<div class="container-fluid flex-column justify-content-between" id="home">
+    <div class="row"></div>
+    <div class="d-flex flex-row justify-content-center flex-wrap">
+        <div class="nav-item">
+            <a class="nav-link h1" href="#about">ABOUT &raquo;</a>
         </div>
-        <div class="product-device box-shadow d-none d-md-block"></div>
-        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+        <div class="nav-item">
+            <a class="nav-link h1" href="#contact">CONTACT &raquo;</a>
+        </div>
+        <div class="nav-item">
+            <a class="nav-link h1" href="{{ url_for('catalog') }}">BROWSE &raquo;</a>
+        </div>
     </div>
+    <div class="row"></div>
+</div>
+
+<div class="container-fluid flex-column justify-content-between page-header" id="about">
+    <div></div>
+    <div class="flex-row d-flex offset-1">
+        <h1 class="col-1 display-4">About</h1>
+    </div>
+    <div class='row'></div>
+</div>
+<div class="container-fluid flex-column justify-content-between page-header-body">
+    <div></div>
+    <div class="row offset-1">
+        <div class="col-md-6">
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod reprehenderit provident, est
+                nisi quas eaque suscipit, assumenda aliquid quo distinctio qui. Error eaque amet placeat dolores culpa
+                veniam aliquam quae!</p>
+            <p class='lead'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quis unde adipisci veritatis nesciunt impedit odit deleniti asperiores dolorem at amet praesentium, sint quibusdam obcaecati pariatur iure enim tempora consectetur?</p>
+        </div>
+    </div>
+    <div></div>
+    <div class="row"></div>
+</div>
+
+<div class="container-fluid flex-column justify-content-between page-header-body" id="contact">
+    <div class="row"></div>
+    <div class="flex-row d-flex offset-1">
+        <h1 class="col-1 display-4">Contact</h1>
+    </div>
+    <div class="d-flex flex-wrap flex-row justify-content-around">
+        <div class="contact-block container-fluid flex-column justify-content-between">
+            <blockquote class="blockquote text-center">
+                <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ratione numquam.</p>
+                <footer class="blockquote-footer">Lorem ipsum</footer>
+            </blockquote>
+        </div>
+        <div class="contact-block container-fluid flex-column justify-content-between">
+            <blockquote class="blockquote text-center">
+                <p class="mb-0">Placeat nihil natus, eligendi molestias necessitatibus, iste quisquam dolore obcaecati
+                    expedita culpa ea.</p>
+                <footer class="blockquote-footer">Lorem ipsum</footer>
+            </blockquote>
+        </div>
+        <div class="contact-block container-fluid flex-column justify-content-between">
+            <blockquote class="blockquote text-center">
+                <p class="mb-0">Fuga nobis dolor labore porro iusto. Inventore, veritatis ipsam. Tempora, mollitia
+                    voluptatibus.</p>
+                <footer class="blockquote-footer">Lorem ipsum</footer>
+            </blockquote>
+        </div>
+    </div>
+    <div class="row"></div>
+</div>
+<div class="container-fluid flex-column justify-content-between page-header" id="contact-header">
+
+</div>
 {% endblock %}

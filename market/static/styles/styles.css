@@ -2,6 +2,9 @@ body {
     background-color: #F2F2EA;
 }
 
+.navbar {
+    position: fixed;
+
 /* Admin Page alterations -----------------------------------------------------------------------*/
 
 /* All nav-link anchor elements inside n-container classes */
