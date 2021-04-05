@@ -373,7 +373,12 @@
 
           // Why does this run an increasing amount of time based on the # of times the 'showModal' btn is clicked??
           $("#newProductModal").on("shown.bs.modal", function(event) {
-            alert("showing");
+            // If save button is clicked
+            $("#saveToCatalog-button").click(function() {
+
+              // Save the new product to the database
+              $("#newProductModal").modal('hide');
+            });
           });
         });
 
