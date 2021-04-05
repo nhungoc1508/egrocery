@@ -12,6 +12,10 @@ from market.mockdata import *
 def home_page():
     return render_template('home.html')
 
+@app.route('/admin')
+def admin_page():
+    return render_template('admin.html')
+
 @app.route('/register', methods=['GET', 'POST'])
 def register_page():
     form = RegisterForm()
