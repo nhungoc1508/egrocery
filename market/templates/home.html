@@ -8,13 +8,6 @@ Home page
 <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
 {% endblock %}
 {% block content %}
-<!-- <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <a class="btn btn-primary" href="{{ url_for('market_page') }}">Start browsing</a>
-        </div>
-        <div class="product-device box-shadow d-none d-md-block"></div>
-        <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
-    </div> -->
 
 <div class="container-fluid flex-column justify-content-between" id="home">
     <div class="row"></div>
@@ -26,39 +19,34 @@ Home page
             <a class="nav-link h1" href="#contact">CONTACT &raquo;</a>
         </div>
         <div class="nav-item">
-            <a class="nav-link h1" href="{{ url_for('market_page') }}">BROWSE &raquo;</a>
+            <a class="nav-link h1" href="{{ url_for('catalog') }}">BROWSE &raquo;</a>
         </div>
     </div>
     <div class="row"></div>
 </div>
 
-<div class="container-fluid flex-column justify-content-between" id="about">
-    <div class="row"></div>
+<div class="container-fluid flex-column justify-content-between page-header" id="about">
+    <div></div>
     <div class="flex-row d-flex offset-1">
         <h1 class="col-1 display-4">About</h1>
     </div>
+    <div class='row'></div>
+</div>
+<div class="container-fluid flex-column justify-content-between page-header-body">
+    <div></div>
     <div class="row offset-1">
         <div class="col-md-6">
             <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod reprehenderit provident, est
                 nisi quas eaque suscipit, assumenda aliquid quo distinctio qui. Error eaque amet placeat dolores culpa
                 veniam aliquam quae!</p>
+            <p class='lead'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident quis unde adipisci veritatis nesciunt impedit odit deleniti asperiores dolorem at amet praesentium, sint quibusdam obcaecati pariatur iure enim tempora consectetur?</p>
         </div>
     </div>
-    <div class="d-flex flex-wrap flex-row justify-content-around">
-        <div class="media">
-            <img class="align-self-start mr-3" src="../static/images/about-0.jpeg" alt="About-0">
-        </div>
-        <div class="media">
-            <img class="align-self-center mr-3" src="../static/images/about-1.jpeg" alt="About-1">
-        </div>
-        <div class="media">
-            <img class="align-self-end mr-3" src="../static/images/about-2.jpeg" alt="About-2">
-        </div>
-    </div>
+    <div></div>
     <div class="row"></div>
 </div>
 
-<div class="container-fluid flex-column justify-content-between" id="contact">
+<div class="container-fluid flex-column justify-content-between page-header-body" id="contact">
     <div class="row"></div>
     <div class="flex-row d-flex offset-1">
         <h1 class="col-1 display-4">Contact</h1>
@@ -86,5 +74,8 @@ Home page
         </div>
     </div>
     <div class="row"></div>
+</div>
+<div class="container-fluid flex-column justify-content-between page-header" id="contact-header">
+
 </div>
 {% endblock %}

@@ -1,38 +1,55 @@
 {% extends 'base.html' %}
 {% block title %}
-    Register
+Register
 {% endblock %}
-
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/register.css') }}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+{% endblock %}
 {% block content %}
-<body class="text-center">
-    <div class="container">
+
+<body>
+    <div class="container-fluid flex-column justify-content-between">
         <form method="POST" class="form-register">
             {{ form.hidden_tag() }}
-            <h1 class="h3 mb-3 font-weight-normal">
-                REGISTER
-            </h1>
-            <br>
-            {{ form.username.label() }}
-            {{ form.username(class="form-control", placeholder="Username") }}
-
-            {{ form.email_address.label() }}
-            {{ form.email_address(class="form-control", placeholder="Email address") }}
-
-            {{ form.password1.label() }}
-            {{ form.password1(class="form-control", placeholder="Password") }}
-
-            {{ form.password2.label() }}
-            {{ form.password2(class="form-control", placeholder="Confirm password") }}
-
-            <br>
-
-            <div class="checkbox mb-3">
-               <h6>Already have an account?</h6>
-               <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+            <div class="row justify-content-center">
+                <div class="display-3">Register</div>
+            </div>
+            <div class="row justify-content-center">
+                <p class="lead">to start shopping</p>
             </div>
 
-            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            <br>
+            <div class="d-flex flex-row flex-wrap justify-content-center">
+                <div class="col-2">{{ form.username.label() }}</div>
+                <div class="col-6">{{ form.username(class="form-control transparent-form", placeholder="enter your username") }}</div>
+            </div>
+            <br>
+            <div class="d-flex flex-row flex-wrap justify-content-center">
+                <div class="col-2">{{ form.email_address.label() }}</div>
+                <div class="col-6">{{ form.email_address(class="form-control transparent-form", placeholder="enter your email address") }}</div>
+            </div>
+            <br>
+            <div class="d-flex flex-row flex-wrap justify-content-center">
+                <div class="col-2">{{ form.password1.label() }}</div>
+                <div class="col-6">{{ form.password1(class="form-control transparent-form", placeholder="enter your assword") }}</div>
+            </div>
+            <br>
+            <div class="d-flex flex-row flex-wrap justify-content-center">
+                <div class="col-2">{{ form.password2.label() }}</div>
+                <div class="col-6">{{ form.password2(class="form-control transparent-form", placeholder="confirm your password") }}</div>
+            </div>
+            <br>
 
+            <div class="checkbox mb-3 d-flex flex-row flex-wrap justify-content-center">
+                <div class="display-6 mr-3">Already have an account?</div>
+                <a class="btn btn-sm btn-secondary navigate-button" href="{{ url_for('login_page') }}">Login</a>
+            </div>
+
+            <div class='row justify-content-center'>
+                <div class='col-2'>{{ form.submit(class="btn btn-lg btn-block btn-primary navigate-button") }}</div>
+            </div>
         </form>
     </div>
 </body>

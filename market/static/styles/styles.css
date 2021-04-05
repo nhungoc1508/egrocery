@@ -1,3 +1,7 @@
 body {
     background-color: #F2F2EA;
 }
+
+.navbar {
+    position: fixed;
+}

@@ -11,7 +11,6 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(length=30), nullable=False, unique=True)
     email_address = db.Column(db.String(length=50), nullable=False, unique=True)
     password_hash = db.Column(db.String(length=60), nullable=False)
-    # items = db.relationship('Item', backref='owned_user', lazy=True)
 
     @property
     def password(self):
@@ -24,18 +23,30 @@ class User(db.Model, UserMixin):
     def check_password_correction(self, attempted_password):
         return bcrypt.check_password_hash(self.password_hash, attempted_password)
 
-# class Item(db.Model):
 class Products_new(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     kind = db.Column(db.String(length=30), nullable=False, unique=True)
     name = db.Column(db.String(length=30), nullable=False, unique=True)
     price = db.Column(db.Integer(), nullable=False)
-    # barcode = db.Column(db.String(length=12), nullable=False, unique=True)
     description = db.Column(db.String(length=1024), nullable=False, unique=True)
-    # owner = db.Column(db.Integer(), db.ForeignKey('user.id'))
+    img = db.Column(db.String())
+    color = db.Column(db.String())
+
     def __repr__(self):
         return f'Item {self.name}'
 
     def buy(self, user):
         self.owner = user.id
+        db.session.commit()
+
+    def update_price(self, new_price):
+        self.price = new_price
+        db.session.commit()
+
+    def update_img(self, img_url):
+        self.img = img_url
+        db.session.commit()
+
+    def update_color(self, color):
+        self.color = color
         db.session.commit()

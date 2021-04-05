@@ -27,17 +27,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">CONTACT</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('market_page') }}">BROWSE</a>
+                <a class="nav-link" href="{{ url_for('catalog') }}">BROWSE</a>
             </li>
         </ul>
           {% if current_user.is_authenticated %}
             <ul class="navbar-nav">
+                {% if current_user.username == "admin123" %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('catalog') }}">ADMIN</a>
+                </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link">Welcome, {{ current_user.username }}</a>
                 </li>
