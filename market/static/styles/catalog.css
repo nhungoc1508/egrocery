@@ -10,11 +10,18 @@ html, body {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
 }
 
+.product-card:hover{
+  /* color: green; */
+  opacity: 0.9;
+
+}
+
 .product-img-ctn {
     background: beige;
     border-radius: 8px 8px 0px 0px;
     height: 225px;
     width: 225px;
+    /* background-color: black; */
 }
 
 .product-img-ctn img {
@@ -50,6 +57,8 @@ html, body {
 .product-price {
     text-align: center;
 }
+
+
 
 .product-category {
     margin: 100px;
