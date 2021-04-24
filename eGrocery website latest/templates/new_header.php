@@ -24,25 +24,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto ml-auto nav-fill w-50">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Beverages</a>
+                    <a class="nav-link" href="homepage.php?category=Beverages">Beverages</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dairy</a>
+                    <a class="nav-link" href="homepage.php?category=Dairy">Dairy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Desserts</a>
+                    <a class="nav-link" href="homepage.php?category=Desserts">Desserts</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Dry goods</a>
+                    <a class="nav-link" href="homepage.php?category=Dry goods">Dry goods</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Fruits</a>
+                    <a class="nav-link" href="homepage.php?category=Fruits">Fruits</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Vegetables</a>
+                    <a class="nav-link" href="homepage.php?category=Vegetables">Vegetables</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Meat</a>
+                    <a class="nav-link" href="homepage.php?category=Meat">Meat</a>
                 </li>
             </ul>
         </div>
@@ -72,12 +72,12 @@
     <div class="row justify-content-center">
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
-                <form class="searchbar col-6">
+                <form class="searchbar col-6" action="homepage.php">
                     <div class="form-group row">
                         <label for="search-input">
                             <i class="fas fa-search" id="search-icon"></i>
                         </label>
-                        <input id="search-input" class="search_input" type="text" name="" placeholder="Search">
+                        <input id="search-input" class="search_input" type="text" name="search_product" placeholder="Search">
                     </div>
                 </form>
             </div>

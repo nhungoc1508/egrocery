@@ -20,12 +20,9 @@
     <div class='container catalog-ctn'>
         <div class="d-flex flex-row flex-wrap justify-content-around">
             <?php
-            if ($select_query_result) {
 
-                $result = $select_query_result;
-            } else {
-                $result = "SELECT * FROM `products`";
-            }
+            $result = $select_query_result;
+
             while ($row = mysqli_fetch_array($result)) { ?>
                 <div class='product-card' style="background: linear-gradient(to right, #F2F2EA, white)">
                     <div class='product-img-ctn'>
