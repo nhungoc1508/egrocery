@@ -1,5 +1,5 @@
 body {
-    background-color: #F2F2EA;
+    /* background-color: #F2F2EA; */
 }
 
 /* Navbar */
@@ -58,6 +58,7 @@ html, body {
 
 /* All nav-link anchor elements inside n-container classes */
 .n-container .nav-link{
+    /* background-color: white; */
     background-color: #C4C4C4;
     text-align: center;
     color: black;

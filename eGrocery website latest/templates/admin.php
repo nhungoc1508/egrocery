@@ -45,7 +45,7 @@
   </div> -->
 
   <!-- New Admin Navbar -->
-  <nav class="navbar navbar-expand-md navbar-light gradient justify-content-center">
+  <nav class="navbar navbar-expand-md navbar-light justify-content-center">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
