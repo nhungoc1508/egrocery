@@ -12,7 +12,7 @@
     <!-- Customized CSS for all pages -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="new_header_footer.css">
+    <link rel="stylesheet" href="../styles/new_header_footer.css">
     <title>Page</title>
 </head>
 
