@@ -1,4 +1,5 @@
 <?php
+
 include("new_navbar.php");
 include("new_header.php");
 include("database.php");
@@ -19,7 +20,10 @@ LIMIT 12";
  $select_query_result = mysqli_query($con,$select_query) or die(mysqli_error($con));
 
 //  include('homepageContent.php');
- include('new_footer.php');
+// include('homepageHeaderNEW.php');
+//include('catalog.php');
+include("catalog.php");
+include("new_footer.php");
 
 
  ?>
