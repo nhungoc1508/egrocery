@@ -16,7 +16,7 @@ if ($_GET['search_product']){
 }
 else if ($_GET['category']){
   $search_product = $_GET['category'];
-  print $search_product;
+  // print $search_product;
   // include("'$search_product'.category_header.php");
 
   $select_query = "SELECT * FROM `products` WHERE `category` LIKE '%$search_product%'";
