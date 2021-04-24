@@ -26,24 +26,24 @@
             <div class="display-4 form-title">Register</div>
             <div class="form-group">
                 <label for="fname">First Name</label>
-                <input type="text" class="form-control" id="fname" aria-describedby="firstNameHelp" placeholder="Enter first name">
+                <input type="text" class="form-control" id="fname" aria-describedby="firstNameHelp" placeholder="Enter first name" required>
             </div>
             <div class="form-group">
                 <label for="lname">Last Name</label>
-                <input type="text" class="form-control" id="lname" aria-describedby="lastNameHelp" placeholder="Enter last name">
+                <input type="text" class="form-control" id="lname" aria-describedby="lastNameHelp" placeholder="Enter last name" required>
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
+                <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username" required>
             </div>
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
                 <small id="emailHelp" class="form-text text-muted">**We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
