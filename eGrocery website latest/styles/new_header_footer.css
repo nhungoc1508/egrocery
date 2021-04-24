@@ -2,6 +2,11 @@ html, body {
     height: 100%;
 }
 
+.navbar {
+    /* Ensures the navbar background is always our default background color */
+    background: white;
+}
+
 .nav-link {
     font-family: 'Hammersmith One', sans-serif;
     color: white;

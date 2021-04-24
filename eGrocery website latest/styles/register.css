@@ -1,3 +1,17 @@
+body {
+    background-image: url("../images/login.jpeg");
+    /* Makes sure the background image covers the whole element */
+    background-attachment: fixed;
+    background-size: cover;
+}
 .container-form {
-    width: 80%;
+    margin-top: 1.5rem;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem;
+    background: white;
+}
+
+.form-title {
+    text-align: center;
+    /* font-family: 'Hammersmith One', sans-serif; */
 }

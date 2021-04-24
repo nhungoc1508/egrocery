@@ -2,9 +2,7 @@
 <html lang="en">
 
 <?php
-// include("new_header.php");
-// To-do: create a separate header.php with ONLY the navbar
-include("new_navbar.php");
+    include("new_navbar.php");
 ?>
 
 <head>
@@ -23,12 +21,21 @@ include("new_navbar.php");
 </head>
 
 <body>
-    <div class="container-form">
+    <div class="container-form container justify-content-center">
         <form>
+            <div class="display-4 form-title">Register</div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <label for="fname">First Name</label>
+                <input type="text" class="form-control" id="fname" aria-describedby="firstNameHelp" placeholder="Enter first name">
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" aria-describedby="lastNameHelp" placeholder="Enter last name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">**We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
@@ -36,9 +43,9 @@ include("new_navbar.php");
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <label class="form-check-label" for="exampleCheck1">I agree to the following terms and conditions.</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Create Account</button>
         </form>
     </div>
 </body>
