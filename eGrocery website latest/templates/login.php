@@ -3,23 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Latest compiled and minified CSS -->
+    <!-- Best practice: CSS stylesheet links are normally added within the <head> so that styles are loaded
+        as the website loads (preventing unwanted styles) -->
+    <!-- Latest Bootstrap CSS first, then optional theme, then Google Fonts. then custom CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- jQuery Library -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <script defer src="https://kit.fontawesome.com/6e02521c5e.js" crossorigin="anonymous"></script>
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Potta+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
 
     <script src="" charset="utf-8"></script>
-    <link rel="stylesheet" href="login.css">
+
     <style media="screen">
 
     <?php
@@ -81,9 +75,8 @@
             <span class="psw">Forgot <a href="#">password?</a></span>
           </div>
         </form>
-        <!--  -->
+        <!-- PHP Starts here -->
         <?php
-
 
               if ($_GET['error']){
                 // file_put_contents($filename,'Unsuccessful login -> '.$_GET['error']."\n", FILE_APPEND);
@@ -98,25 +91,21 @@
                   print "<p class='error'>Invalid Password!</p>";
                 }
 
-
-
-
-
             }
            ?>
 
         <!--  -->
 
-
       </div>
-
 
     </div>
 
-
-
-
-
-
+    <!-- Best practice: Javascript links are typically added at the end of the HTML body 
+    to give HTML time to load before JS loads (speeds up response time and prevents some errors) -->
+    <!-- jQuery first, then minified JS, then fontawesome, then iconify -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/6e02521c5e.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   </body>
 </html>
