@@ -1,0 +1,134 @@
+html, body {
+    height: 100%;
+}
+
+.nav-link {
+    font-family: 'Hammersmith One', sans-serif;
+    color: white;
+}
+
+.nav-item a {
+    color: #fff;
+    /* text-transform: uppercase; */
+    text-decoration: none;
+    /* letter-spacing: 0.15em; */
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.nav-item a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: black;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.nav-item a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.gradient {
+    border-radius: 0;
+    background: #D4B563;
+    background: -webkit-linear-gradient(legacy-direction(to right), #D4B563 0%, #1dc8cc 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#D4B563), to(#AF7F02));
+    background: -webkit-linear-gradient(left, #D4B563 0%, #AF7F02 100%);
+    background: -o-linear-gradient(left, #D4B563 0%, #AF7F02 100%);
+    background: linear-gradient(to right, #D4B563 0%, #AF7F02 100%)
+}
+
+.product-category {
+    margin: 100px;
+}
+
+.page-header {
+    background-image: url(../images/vegetable.jpeg);
+    height: 50%;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 10%;
+}
+
+.carousel-inner {
+    height: 60vh !important;
+    width: 100%;
+}
+
+.searchbar {
+    margin-bottom: auto;
+    /* margin-top: auto; */
+    margin-top: -30px;
+    height: 60px;
+    background-color: #F2F2EA;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search_input {
+    border: 0;
+    outline: 0;
+    background: none;
+    line-height: 40px;
+    padding-bottom: 10px;
+    /* width: 350px; */
+    /* caret-color: white; */
+}
+
+#search-icon {
+    height: 40px;
+    width: 40px;
+    /* float: left; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    background: #F2F2EA;
+    color: #D4B563;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+ul.no-bullets {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margins */
+}
+
+ul.no-bullets>li {
+    padding: 1% 0 1% 0;
+}
+
+.card {
+    color: white;
+    background-color: black;
+    border-radius: 0;
+    padding: 20px;
+}
+
+.divider {
+    border-top: 1px solid white;
+}
+
+.social>i {
+    padding: 0 1% 0 1%;
+    font-size: 15px
+}
+
+.social>i:hover {
+    color: #D4B563;
+    cursor: pointer
+}
