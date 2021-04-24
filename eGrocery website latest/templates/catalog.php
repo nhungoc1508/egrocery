@@ -25,8 +25,14 @@
 
             while ($row = mysqli_fetch_array($result)) { ?>
                 <div class='product-card' style="background: linear-gradient(to right, #F2F2EA, white)">
-                    <div class='product-img-ctn'>
+                    <div class='product-img-ctn d-flex justify-content-center'>
                         <img src=<?php echo $row['img_url']; ?> alt=<?php echo $row['name']; ?>>
+                        <div class="d-flex detail-btn">
+                            <form action="product.php">
+                                <input type="hidden" name="search_product" value="<?php echo $row['id']; ?>">
+                                <input class="see-detail lead" type="submit" value="SEE DETAILS">
+                            </form>
+                        </div>
                     </div>
                     <div class="d-flex justify-content-center">
                         <i class="fas fa-cart-arrow-down" id="shopping-cart-icon"></i>
