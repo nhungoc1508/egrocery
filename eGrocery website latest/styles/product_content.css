@@ -1,0 +1,36 @@
+#test {
+    background-color: salmon;
+}
+
+.product-ctn {
+    margin: 5% 0 5% 0;
+}
+
+.product-img {
+    height: 500px;
+    width: 350px;
+    /* background-color: black; */
+}
+
+.product-img img {
+    width: 400px;
+    height:100%;
+    float:left;
+    object-fit: cover;
+}
+
+.product-name {
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+.content-divider {
+    border-top: 1px solid #d4b6637e;
+}
+
+.btn {
+    float: right;
+}
+
+.content-section {
+    padding: 0px 0 20px 0;
+}
