@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en">
 <?php
-// include("new_header.php");
+// Navbar added to top
+  include("new_navbar.php");
 ?>
 
 <head>
@@ -16,44 +17,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
   <!-- Customized CSS -->
-  <link rel="stylesheet" type="text/css" href="admin.css">
+  <link rel="stylesheet" type="text/css" href="../styles/admin.css">
 </head>
 
 <body class="text-center">
-  <!-- Navbar -->
-  <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light top-navbar">
-      <a class="navbar-brand" href="homepage.php">eGrocery</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item top-nav-item active">
-            <a class="nav-link top-nav-link" href="homepage.php">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item top-nav-item">
-            <a class="nav-link top-nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item top-nav-item">
-            <a class="nav-link top-nav-link" href="#">Contact</a>
-          </li>
-          <!-- MAKE THIS TAB INVISIBLE FOR CUSTOMERS! -->
-          <li class="nav-item top-nav-item">
-            <a class="nav-link top-nav-link" href="admin.php">Admin</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item top-nav-item">
-            <a class="nav-link top-nav-link" href="#">Log in</a>
-          </li>
-          <li class="nav-item top-nav-item">
-            <a class="nav-link top-nav-link" href="#">Sign up</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
 
   <div class="row d-flex justify-content-center admin-title">
     <h1>ADMIN PANEL</h1>
