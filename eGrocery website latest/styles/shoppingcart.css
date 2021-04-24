@@ -1,0 +1,66 @@
+body {
+        /* background-image: url("../images/shoppingcartbackground.jpg"); */
+    /* Makes sure the background image covers the whole element */
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.cart-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.cart-ctn {
+    /* margin: 5% 0 5% 0; */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.title-row {
+    border: silver;
+    border-style: solid none none;
+    border-width: thin;
+    padding: 10px 0;
+}
+.title-row div {
+    font-weight: bold;
+}   
+
+.product-row {
+    border: silver;
+    border-style: solid none none;
+    border-width: thin;
+    padding: 10px 0;
+}
+
+.product-img {
+    height: 150px;
+    width: 150px;
+    background: blue;
+}
+
+.product-name {
+
+}
+
+#quantity {
+    width: 70%;
+}
+
+.price-row {
+    padding-right: 50px;
+}
+
+.subtotal-text {
+    text-align: right;
+}
+.subtotal-price {
+    text-align: right;
+}
+
+.btn-checkout {
+    margin-top: 1rem;
+    float: right;
+}

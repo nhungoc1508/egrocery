@@ -45,6 +45,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="register.php">Sign up</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link shopping-cart-img" href="shoppingcart.php"><img src="../images/shopping-cart.png" alt="Shopping cart"></a>
+                </li>
             </ul>
         </div>
     </nav>
