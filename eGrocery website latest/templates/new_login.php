@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-    include("new_navbar.php");
+include("new_navbar.php");
 ?>
 
 <head>
@@ -17,50 +17,65 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/register.css">
+    <style media="screen">
+        <?php
+        if ($_GET['error']) {
+            print ".error{
+       text-align: center;
+       font-size: 14px;
+       font-weight: bolder;
+       position: absolute;
+       left: 50%;
+       top: 10%;
+       transform: translate(-50%,-20%);
+       color: red;
+       background-color: pink;
+       border: none;
+       width: 230px;
+       padding: 4px;
+       opacity: 0.85;
+
+       outline: none;
+     }";
+        }
+        ?>
+    </style>
     <title>Register Page</title>
 </head>
 
 <body>
     <div class="container-form container justify-content-center">
-        <form>
-            <div class="display-4 form-title">Register</div>
-            <div class="form-group">
-                <label for="fname">First Name</label>
-                <input type="text" class="form-control" id="fname" aria-describedby="firstNameHelp" placeholder="Enter first name">
-            </div>
-            <div class="form-group">
-                <label for="lname">Last Name</label>
-                <input type="text" class="form-control" id="lname" aria-describedby="lastNameHelp" placeholder="Enter last name">
-            </div>
+        <form action="authenticate.php" method="post">
+            <div class="display-4 form-title">Login</div>
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username">
-            </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">**We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">I agree to the following terms and conditions</label>
-                <!-- <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a> -->
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
             </div>
-            <button type="submit" class="btn btn-primary">Create Account</button>
+            <button type="submit" class="btn btn-primary">Log in</button>
         </form>
+        <!-- PHP Starts here -->
+        <?php
+        if ($_GET['error']) {
+            // file_put_contents($filename,'Unsuccessful login -> '.$_GET['error']."\n", FILE_APPEND);
+
+            if ($_GET['error'] == 'invalidUsernamePassword') {
+                print "<p class='error'>Invalid Username or Password!</p>";
+            } else if ($_GET['error'] == 'invalidUsername') {
+                print "<p class='error'>Invalid Username!</p>";
+            } else if ($_GET['error'] == 'invalidPassword') {
+                print "<p class='error'>Invalid Password!</p>";
+            }
+        }
+        ?>
     </div>
-    <!-- <script>
-        $(function () {
-            $('[data-toggle="popover"]').popover()
-        })
-        $('.popover-dismiss').popover({
-            trigger: 'focus'
-        })
-    </script> -->
 </body>
 
 </html>
