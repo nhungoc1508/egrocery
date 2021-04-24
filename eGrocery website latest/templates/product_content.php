@@ -68,7 +68,7 @@
                                             <option value="10">10</option>
                                         </select>
                                     </div>
-                                    <button class="btn btn-primary" type="submit">Add to cart</button>
+                                    <button class="add-to-cart-btn" type="submit"><i class="fas fa-cart-arrow-down"></i> Add to cart</button>
                                 </form>
                             </div>
                             <div class="content-divider mb-4"> </div>
