@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/catalog.css">
+    <!-- AOS - animate on scroll library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
     <title></title>
 </head>
 
@@ -24,7 +26,7 @@
             $result = $select_query_result;
 
             while ($row = mysqli_fetch_array($result)) { ?>
-                <div class='product-card' style="background: linear-gradient(to right, #F2F2EA, white)">
+                <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="50" class='product-card' style="background: linear-gradient(to right, #F2F2EA, white)">
                     <div class='product-img-ctn d-flex justify-content-center'>
                         <img src=<?php echo $row['img_url']; ?> alt=<?php echo $row['name']; ?>>
                         <div class="d-flex detail-btn">
@@ -53,4 +55,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
+    <!-- AOS - animate on scroll library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- End of AOS -->
 </body>

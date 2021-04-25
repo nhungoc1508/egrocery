@@ -13,13 +13,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/product_content.css">
+    <!-- AOS - animate on scroll library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Product view</title>
 </head>
 
 <body>
-
-
-    <div class="container product-ctn">
+    <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="50" class="container product-ctn">
         <div class="">
             <?php
             if ($select_query_result) {
@@ -83,6 +83,13 @@
             <?php } ?>
         </div>
     </div>
+
+    <!-- AOS - animate on scroll library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- End of AOS -->
 </body>
 
 </html>

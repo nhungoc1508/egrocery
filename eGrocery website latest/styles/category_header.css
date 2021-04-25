@@ -1,0 +1,15 @@
+.category-name {
+    font-family: 'Hammersmith One', sans-serif;
+    padding: 0 20px 0 20px;
+    background: linear-gradient(to top, #D4B563 50%, transparent 50%);
+}
+
+.overlay {
+    position: absolute;
+    z-index: 12;
+    top: 30%;
+}
+
+.carousel-inner {
+    height: 40vh !important;
+}
