@@ -97,3 +97,39 @@ html, body {
     border: 0;
     transition: 0.3s;
 }
+
+.not-found-ctn {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    /* text-align: center; */
+}
+
+.not-found-title {
+    font-family: 'Hammersmith One', sans-serif;
+    background: linear-gradient(to bottom, #D4B563 50%, transparent 50%);
+    text-align: center;
+}
+
+.not-found-btn {
+    width: 200px;
+    height: 40px;
+    text-decoration: none;
+    background-color: #D4B563;
+    color: black;
+    border-radius: 0;
+    border: 0;
+    transition: 0.3s;
+    padding: 2% 0 2% 0;
+    margin-bottom: 10px;
+}
+
+.not-found-btn:hover {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+}
+
+.not-found-ctn > a {
+    text-decoration: none;
+}

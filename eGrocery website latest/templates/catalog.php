@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/catalog.css">
     <!-- AOS - animate on scroll library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title></title>
 </head>
 
@@ -45,6 +45,26 @@
                     <p><small><em><?php echo $row['availability']; ?></em></small></p>
                 </div>
 
+            <?php } ?>
+            <?php if (mysqli_num_rows($result) == 0) { ?>
+                <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="50" class="col-10 not-found-ctn">
+                    <div class="d-flex justify-content-center">
+                        <h4 class="display-4 not-found-title">Product not found</h4>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <p class="lead">The product you searched for is currently unavailable.</p>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="homepage.php">
+                            <button class="not-found-btn" type="submit"><i class="fas fa-cart-arrow-down"></i> Continue shopping</button>
+                        </a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="#">
+                            <button class="not-found-btn" type="submit"><i class="fas fa-comments"></i> Give feedback</button>
+                        </a>
+                    </div>
+                </div>
             <?php } ?>
         </div>
     </div>

@@ -12,7 +12,7 @@ if ($_GET['search_product']){
   $search_product = $_GET['search_product'];
 
   $select_query = "SELECT * FROM `products` WHERE `product_name` LIKE '%$search_product%'";
-
+  
   include("new_header.php");
 
 }
@@ -40,7 +40,6 @@ include("new_header.php");
 }
 
  $select_query_result = mysqli_query($con,$select_query) or die(mysqli_error($con));
-
 
 include("catalog.php");
 
