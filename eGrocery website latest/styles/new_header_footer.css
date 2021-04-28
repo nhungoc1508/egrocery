@@ -40,6 +40,10 @@ html, body {
     left: 0;
 }
 
+.fa-shopping-cart {
+    font-size: 25px;
+}
+
 .shopping-cart-icon {
     font-size: 25px;
     height: 50px;
