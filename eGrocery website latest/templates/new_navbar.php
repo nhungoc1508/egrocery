@@ -39,16 +39,17 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <?php if ($_COOKIE["loggedIn"] == "yes") { ?>
+                <?php if ($_COOKIE["loggedIn"]) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="account.php"><i class="fas fa-user"></i> Hello, <?php echo $_COOKIE["name"] ?></a>
+                        <a class="nav-link" href="logout.php">Logout</a>
                     </li>
                     <li class="nav-item">
                         <!-- <a class="nav-link shopping-cart-img" href="shoppingcart.php"><img src="../images/shopping-cart.png" alt="Shopping cart"></a> -->
                         <a class="nav-link" href="shoppingcart.php"><i class="fas fa-shopping-cart"></i></a>
                     </li>
                 <?php } ?>
-                <?php if ($_COOKIE["loggedIn"] == "no") { ?>
+                <?php if (!$_COOKIE["loggedIn"]) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="new_login.php">Log in</a>
                     </li>
