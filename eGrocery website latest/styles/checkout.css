@@ -1,0 +1,35 @@
+.checkout-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-family: 'Hammersmith One', sans-serif;
+    background: linear-gradient(to bottom, #D4B563 50%, transparent 50%);
+}
+
+.checkout-ctn {
+    margin: 5% 0 5% 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.checkout-card {
+    background-color: white;
+}
+
+.subtotal-text {
+    text-align: right;
+}
+
+.subtotal-price {
+    text-align: right;
+}
+
+.mdb-select {
+    width: 100%;
+    display: block;
+}
+
+.md-form {
+    margin-bottom: 1rem;
+}
