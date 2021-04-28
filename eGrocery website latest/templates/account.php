@@ -166,42 +166,42 @@ include("database.php");
                                     <div class="form-group">
                                         <label class="row" for="fname">First name</label>
                                         <div class="row">
-                                            <input type="text" class="form-control col-11" id="fname" name="first_name" aria-describedby="firstNameHelp" placeholder="<?php echo $row['first_name']; ?>" readonly>
+                                            <input type="text" class="form-control col-11" id="fname" name="first_name" aria-describedby="firstNameHelp" value="<?php echo $row['first_name']; ?>" readonly>
                                             <button type="button" class="submit-btn col-1 ml-auto" id="editFName" /><i class="fas fa-edit"></i></button>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="row" for="lname">Last name</label>
                                         <div class="row">
-                                            <input type="text" class="form-control col-11" id="lname" name="last_name" aria-describedby="lastNameHelp" placeholder="<?php echo $row['last_name']; ?>" readonly>
+                                            <input type="text" class="form-control col-11" id="lname" name="last_name" aria-describedby="lastNameHelp" value="<?php echo $row['last_name']; ?>" readonly>
                                             <button type="button" class="submit-btn col-1 ml-auto" id="editLName" /><i class="fas fa-edit"></i></button>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="row" for="email">Email address</label>
                                         <div class="row">
-                                            <input type="email" class="form-control col-11" id="email" name="email" aria-describedby="emailHelp" placeholder="<?php echo $row['email']; ?>" readonly>
+                                            <input type="email" class="form-control col-11" id="email" name="email" aria-describedby="emailHelp" value="<?php echo $row['email']; ?>" readonly>
                                             <button type="button" class="submit-btn col-1 ml-auto" id="editEmail" /><i class="fas fa-edit"></i></button>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="row" for="username">Username</label>
                                         <div class="row">
-                                            <input type="text" class="form-control col-11" id="username" name="username" aria-describedby="usernameHelp" placeholder="<?php echo $row['user_name']; ?>" readonly>
+                                            <input type="text" class="form-control col-11" id="username" name="username" aria-describedby="usernameHelp" value="<?php echo $row['user_name']; ?>" readonly>
                                             <button type="button" class="submit-btn col-1 ml-auto" id="editUsername" /><i class="fas fa-edit"></i></button>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="row" for="phone">Phone number</label>
                                         <div class="row">
-                                            <input type="text" class="form-control col-11" id="phone" name="phone" aria-describedby="phoneeHelp" placeholder="<?php echo $row['phone']; ?>" readonly>
+                                            <input type="text" class="form-control col-11" id="phone" name="phone" aria-describedby="phoneeHelp" value="<?php echo $row['phone']; ?>" readonly>
                                             <button type="button" class="submit-btn col-1 ml-auto" id="editPhone" /><i class="fas fa-edit"></i></button>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="row" for="phone">Address</label>
                                         <div class="row">
-                                            <input type="text" class="form-control col-11" id="address" name="address" aria-describedby="addresselp" placeholder="<?php echo $row['address']; ?>" readonly>
+                                            <input type="text" class="form-control col-11" id="address" name="address" aria-describedby="addresselp" value="<?php echo $row['address']; ?>" readonly>
                                             <button type="button" class="submit-btn col-1 ml-auto" id="editAddress" /><i class="fas fa-edit"></i></button>
                                         </div>
                                     </div>

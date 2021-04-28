@@ -24,6 +24,16 @@ $total = 0;
 </head>
 
 <body>
+    <?php
+    $user_id = $_COOKIE['user_id'];
+
+    $select_query = "SELECT * FROM `users` WHERE `id` = '$user_id'";
+
+
+    $select_query_result = mysqli_query($con, $select_query) or die(mysqli_error($con));
+    $result = $select_query_result;
+    $row = mysqli_fetch_array($result);
+    ?>
     <div class="container checkout-ctn justify-content-center">
         <div class="row justify-content-center">
             <p class="display-4 checkout-title">Checkout</p>
@@ -36,7 +46,7 @@ $total = 0;
             <div class="row title-row">
 
                 <!--Grid column-->
-                <div class="col-lg-8 mb-4 mx-auto">
+                <div class="col-lg-8 mb-4 mx-auto lead">
 
                     <h3>Delivery Address</h3>
 
@@ -54,7 +64,7 @@ $total = 0;
                                     <!-- First name -->
                                     <div class="md-form md-outline mb-0 mb-lg-4">
                                         <label for="firstName">First name</label>
-                                        <input type="text" id="firstName" class="form-control mb-0 mb-lg-2">
+                                        <input type="text" id="firstName" class="form-control mb-0 mb-lg-2" value=<?php echo $row['first_name']; ?>>
                                     </div>
 
                                 </div>
@@ -66,7 +76,7 @@ $total = 0;
                                     <!-- Last name -->
                                     <div class="md-form md-outline">
                                         <label for="lastName">Last name</label>
-                                        <input type="text" id="lastName" class="form-control">
+                                        <input type="text" id="lastName" class="form-control" value=<?php echo $row['last_name']; ?>>
                                     </div>
 
                                 </div>
@@ -74,6 +84,12 @@ $total = 0;
 
                             </div>
                             <!-- Grid row -->
+
+                            <!-- Phone number -->
+                            <div class="md-form md-outline mt-0">
+                                <label for="phone">Phone number</label>
+                                <input type="text" id="phone" class="form-control" value=<?php echo $row['phone']; ?>>
+                            </div>
 
                             <!-- Address Part 1 -->
                             <div class="md-form md-outline mt-0">
@@ -144,27 +160,27 @@ $total = 0;
 
             <!-- Billing Information Card -->
             <div class="row">
-                <div class="col-lg-8 mx-auto">
+                <div class="col-lg-8 mx-auto lead">
                     <h3>Billing Information</h3>
                     <div class="card card-billing">
                         <!-- credit card info-->
-                        <div id="credit-card" class="tab-pane fade show active pt-3">
-                            <form role="form" onsubmit="event.preventDefault()">
+                        <div id="credit-card" class="tab-pane fade show active pt-3 col-12">
+                            <form class="lead" role="form" onsubmit="event.preventDefault()">
                                 <div class="form-group"> <label for="username">
-                                        <h6>Card Owner</h6>
-                                    </label> <input type="text" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
+                                        Card owner
+                                    </label> <input type="text" id="username" name="username" placeholder="Card Owner Name" required class="form-control "> </div>
                                 <div class="form-group">
                                     <label for="cardNumber">
-                                        <h6>Card number</h6>
+                                        Card number
                                     </label>
-                                    <div class="input-group"> <input type="text" name="cardNumber" placeholder="Valid card number" class="form-control " required>
+                                    <div class="input-group"> <input type="text" id="cardNumber" name="cardNumber" placeholder="Valid card number" class="form-control " required>
                                         <div class="input-group-append"> <span class="input-group-text text-muted"> <i class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i class="fab fa-cc-amex mx-1"></i> </span> </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-8">
                                         <div class="form-group"> <label><span class="hidden-xs">
-                                                    <h6>Expiration Date</h6>
+                                                    Expiration date
                                                 </span></label>
                                             <div class="input-group"> <input type="number" placeholder="MM" name="" class="form-control" required> <input type="number" placeholder="YY" name="" class="form-control" required> </div>
                                         </div>
@@ -172,16 +188,16 @@ $total = 0;
                                     <div class="col-sm-4">
                                         <div class="form-group mb-4">
                                             <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
-                                                <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                                                CVV <i class="fa fa-question-circle d-inline"></i>
                                             </label>
                                             <input type="text" required class="form-control">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="payment-row">
+                                <!-- <div class="payment-row">
                                     <h3 class="subtotal-text col-md-12 float-right">Subtotal:</h3>
                                     <h2 class="subtotal-price col-md-12 float-right">AED</h2>
-                                </div>
+                                </div> -->
                                 <button type="button" class="subscribe btn btn-primary btn-block shadow-sm"> Confirm Payment </button>
                             </form>
                         </div> <!-- End -->
