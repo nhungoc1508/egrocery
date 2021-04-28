@@ -5,6 +5,8 @@
 include("new_navbar.php");
 include("header_category.php");
 include("database.php");
+
+$total = 0;
 // include("new_header.php");
 ?>
 
@@ -103,7 +105,10 @@ include("database.php");
                             <p class="text-uppercase category"><?php print $category; ?></p>
                         </div>
                         <div class="col-md-2">
-                            <p class="lead">AED <?php print $product_price; ?></p>
+                            <p class="lead">AED <?php print $product_price; 
+                            $total = $total + $product_price;
+                             
+                             ?></p>
                         </div>
                         <div class="col-md-2">
                             <input type="number" class="form-control" id="quantity" aria-describedby="quantityHelp" placeholder="Quantity" required>
@@ -149,7 +154,7 @@ include("database.php");
             </div> -->
             <div class="row price-row">
                 <h3 class="subtotal-text col-md-12 float-right">Subtotal:</h3>
-                <h2 class="subtotal-price col-md-12 float-right">$99.00</h2>
+                <h2 class="subtotal-price col-md-12 float-right">AED <?php print $total; ?></h2>
                 <div class="container-fluid container-checkout">
                     <button type="button" class="btn btn-primary btn-checkout float-right">Checkout</button>
                 </div>
