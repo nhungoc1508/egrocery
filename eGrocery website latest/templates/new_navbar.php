@@ -28,10 +28,10 @@
                     <a class="nav-link" href="homepage.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="about.php">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="contact.php">Contact</a>
                 </li>
                 <!-- MAKE THIS TAB INVISIBLE FOR CUSTOMERS! -->
                 <li class="nav-item">

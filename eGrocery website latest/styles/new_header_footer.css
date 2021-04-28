@@ -66,8 +66,15 @@ html, body {
 }
 
 .carousel-inner {
-    height: 60vh;
+    height: 40vh;
     width: 100%;
+}
+
+.category-name {
+    font-family: 'Hammersmith One', sans-serif;
+    color: black;
+    padding: 0 20px 0 20px;
+    /* background: linear-gradient(to top, #D4B563 50%, transparent 50%); */
 }
 
 .searchbar {
@@ -75,7 +82,7 @@ html, body {
     /* margin-top: auto; */
     margin-top: -30px;
     height: 60px;
-    background-color: #F2F2EA;
+    background-color: white;
     border-radius: 8px;
     padding: 10px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);

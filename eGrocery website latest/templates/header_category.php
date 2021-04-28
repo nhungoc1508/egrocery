@@ -47,45 +47,6 @@
             </ul>
         </div>
     </nav>
-
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="https://images.unsplash.com/photo-1580324200362-3334072e78d8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://images.unsplash.com/photo-1476733419970-c703149c016b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="https://images.unsplash.com/photo-1498579809087-ef1e558fd1da?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80" alt="Third slide">
-            </div>
-            <div class="carousel-caption d-none d-md-block">
-                <h3 class="category-name">The one-stop-shop solution for grocery shopping.</h3>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <div class="row justify-content-center">
-        <div class="container h-100">
-            <div class="d-flex justify-content-center h-100">
-                <form class="searchbar col-6" action="homepage.php">
-                    <div class="form-group row">
-                        <label for="search-input">
-                            <i class="fas fa-search" id="search-icon"></i>
-                        </label>
-                        <input id="search-input" class="search_input" type="text" name="search_product" placeholder="Search">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
     <!-- JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
