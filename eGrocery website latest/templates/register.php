@@ -21,37 +21,37 @@
 </head>
 
 <body>
-    <div class="container-form container justify-content-center">
-        <form>
+    <div class="container-form container justify-content-center" style="opacity: 0.9; background-color:#D4B563; margin-top:3%; box-shadow: 3px 6px white; ">
+        <form action="register_new_user.php" method="POST">
             <div class="display-4 form-title">Register</div>
             <div class="form-group">
                 <label for="fname">First Name</label>
-                <input type="text" class="form-control" id="fname" aria-describedby="firstNameHelp" placeholder="Enter first name" required>
+                <input type="text" class="form-control" id="fname" name="first_name" aria-describedby="firstNameHelp" placeholder="Enter first name" required>
             </div>
             <div class="form-group">
                 <label for="lname">Last Name</label>
-                <input type="text" class="form-control" id="lname" aria-describedby="lastNameHelp" placeholder="Enter last name" required>
+                <input type="text" class="form-control" id="lname" name="last_name" aria-describedby="lastNameHelp" placeholder="Enter last name" required>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="phone">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Enter phone number" required>
-            </div>
-            <div class="form-group">
+                <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="phoneHelp" placeholder="Enter phone number" required>
+            </div> -->
+            <!-- <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" aria-describedby="addressHelp" placeholder="Enter address" required>
-            </div>
+                <input type="text" class="form-control" id="address" name="address" aria-describedby="addressHelp" placeholder="Enter address" required>
+            </div> -->
             <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
                 <small id="emailHelp" class="form-text text-muted">**We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Enter username" required>
+                <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" placeholder="Enter username" required>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password" required>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
