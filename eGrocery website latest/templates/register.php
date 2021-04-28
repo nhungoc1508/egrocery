@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-    include("new_navbar.php");
+include("new_navbar.php");
 ?>
 
 <head>
@@ -22,7 +22,7 @@
 
 <body>
     <div class="container-form container justify-content-center" style="opacity: 0.9; background-color:#D4B563; margin-top:3%; box-shadow: 3px 6px white; ">
-        <form action="register_new_user.php" method="POST">
+        <form action="register_new_user.php" method="POST" class="password-strength">
             <div class="display-4 form-title">Register</div>
             <div class="form-group">
                 <label for="fname">First Name</label>
@@ -49,9 +49,23 @@
                 <label for="username">Username</label>
                 <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" placeholder="Enter username" required>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password" required>
+            </div> -->
+            <div class="form-group">
+                <label for="password-input">Password</label>
+                <div class="input-group">
+                    <input class="password-strength__input form-control" type="password" id="password-input" aria-describedby="passwordHelp" placeholder="Enter password" />
+                    <div class="input-group-append">
+                        <button class="password-strength__visibility btn btn-outline-secondary" type="button"><span class="password-strength__visibility-icon" data-visible="hidden"><i class="fas fa-eye-slash"></i></span><span class="password-strength__visibility-icon js-hidden" data-visible="visible"><i class="fas fa-eye"></i></span></button>
+                    </div>
+                </div>
+                <small class="password-strength__error text-danger js-hidden"> <!-- Add error text here --> </small>
+                <small class="form-text text-muted mt-2" id="passwordHelp">Add 9 characters or more, lowercase letters, uppercase letters, numbers and symbols to make the password really strong!</small>
+            </div>
+            <div class="password-strength__bar-block progress mb-4">
+                <div class="password-strength__bar progress-bar bg-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -61,13 +75,14 @@
         </form>
     </div>
     <!-- JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS, then custom password javascript -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="../scripts/password.js"></script>
     <script>
-        $(function () {
+        $(function() {
             $('[data-toggle="popover"]').popover()
         })
         $('.popover-dismiss').popover({
