@@ -92,6 +92,10 @@ $count = 0;
                     // echo $items['product_price'];
                     // echo $items['category'];
                     // echo $items['availability'];
+                    // $pId.$items['id'] = $items['id'];
+
+                    // print $pId0;
+                    // print "hello";
 
                     $product_name = $items['product_name'];
                     $product_price = $items['product_price'];
@@ -121,9 +125,21 @@ $count = 0;
                         <div class="col-md-2">
                             <input type="number" class="form-control" id="quantity" aria-describedby="quantityHelp" placeholder="Quantity" required>
                         </div>
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                        <div class="col-md-1.5">
+                            <form action="" method="POST">
+                                <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                            </form>
+                            </div>
+                        <div class="col-md-1">
+
+                            
+                            <form action="delete_item.php" method="POST">
+                            
+                            
+                                <input type="hidden" name="product_id" value="<?php echo $items['id']; ?>">
+                                <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+                            </form>
+                            
                         </div>
                     </div>
 
