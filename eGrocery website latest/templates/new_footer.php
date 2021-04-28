@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="container-fluid card">
+    <div class="container-fluid card card-footer">
         <div class="">
             <div class="row mb-4 ">
                 <div class="col-md-6 col-sm-11 col-xs-11">

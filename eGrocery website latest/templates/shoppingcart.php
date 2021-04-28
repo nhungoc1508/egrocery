@@ -156,7 +156,7 @@ $total = 0;
                 <h3 class="subtotal-text col-md-12 float-right">Subtotal:</h3>
                 <h2 class="subtotal-price col-md-12 float-right">AED <?php print $total; ?></h2>
                 <div class="container-fluid container-checkout">
-                    <button type="button" class="btn btn-primary btn-checkout float-right">Checkout</button>
+                    <button type="button" class="btn btn-primary btn-checkout float-right" onclick="location.href = 'checkout.php';">Checkout</button>
                 </div>
             </div>
         </div>
