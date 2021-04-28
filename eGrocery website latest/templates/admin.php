@@ -2,7 +2,11 @@
 <html lang="en">
 <?php
 // Navbar added to top
-  include("new_navbar.php");
+include("new_navbar.php");
+include("database.php");
+$select_query = "SELECT * FROM `products`";
+$select_query_result = mysqli_query($con, $select_query) or die(mysqli_error($con));
+$result = $select_query_result;
 ?>
 
 <head>
@@ -46,26 +50,26 @@
 
   <!-- New Admin Navbar -->
   <nav class="navbar navbar-expand-md navbar-light justify-content-center">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto ml-auto nav-fill w-50 nav-admin">
-                <li class="nav-item top-nav-item">
-                    <a class="nav-link active" href="#">Product Management</a>
-                </li>
-                <li class="nav-item top-nav-item">
-                    <a class="nav-link" href="#">Offer Management</a>
-                </li>
-                <li class="nav-item top-nav-item">
-                    <a class="nav-link" href="#">Orders & Shipments</a>
-                </li>
-                <li class="nav-item top-nav-item">
-                    <a class="nav-link" href="#">Update Information</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto ml-auto nav-fill w-50 nav-admin">
+        <li class="nav-item top-nav-item">
+          <a class="nav-link active" href="#">Product Management</a>
+        </li>
+        <li class="nav-item top-nav-item">
+          <a class="nav-link" href="#">Offer Management</a>
+        </li>
+        <li class="nav-item top-nav-item">
+          <a class="nav-link" href="#">Orders & Shipments</a>
+        </li>
+        <li class="nav-item top-nav-item">
+          <a class="nav-link" href="#">Update Information</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 
 
@@ -82,8 +86,9 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Product Name</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Price Per Unit</th>
+          <th scope="col">Category</th>
+          <th scope="col">Price (AED)</th>
+          <th scope="col">Availability</th>
           <th scope="col">Actions</th>
           <!-- ID -->
           <!-- Category -->
@@ -93,29 +98,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="category">
-          <th scope="row">Fruit</th>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Bananas</td>
-          <td>50,000</td>
-          <td>$0.10</td>
-          <td>
-            <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Apples</td>
-          <td>40,203</td>
-          <td>$0.25</td>
-          <td>
-            <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-          </td>
-        </tr>
+        <?php while ($row = mysqli_fetch_array($result)) { ?>
+          <tr>
+            <th scope="row"><?php echo $row['id']; ?></th>
+            <td>
+              <p class="text-capitalize"><?php echo $row['product_name']; ?></p>
+            </td>
+            <td>
+              <p class="text-capitalize"><?php echo $row['category']; ?></p< /td>
+            <td>
+              <p class="text-capitalize"><?php echo $row['product_price']; ?></p< /td>
+            <td>
+              <p class="text-capitalize"><?php echo $row['availability']; ?></p< /td>
+            <td>
+              <button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+              <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+            </td>
+          </tr>
+        <?php } ?>
       </tbody>
     </table>
   </div>
@@ -141,7 +141,19 @@
               <input type="text" class="form-control" id="quantity-text"></input>
             </div>
             <div class="form-group">
-              <label for="price-text" class="col-form-label">Price per unit:</label>
+              <label for="category-select">Category</label>
+              <select name="category-select" id="category-select" class="form-select form-select-lg">
+                <option value="Beverages" selected>Beverages</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Desserts">Desserts</option>
+                <option value="Dry goods">Dry goods</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Meat">Meat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="price-text" class="col-form-label">Price (AED)</label>
               <input type="text" class="form-control" id="price-text"></input>
             </div>
 
@@ -174,7 +186,7 @@
         <div class="modal-body">
           <form>
             <div class="form-group">
-              <label class="form-label" for="inventoryFile">Select an Inventory file (.csv) to upload. **Will this replace the existing database or append to it? Should there be options for either?</label>
+              <label class="form-label" for="inventoryFile">Select an Inventory file (.csv) to upload.</label>
               <input type="file" class="form-control" id="inventoryFile" />
             </div>
           </form>
@@ -425,11 +437,11 @@
       // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
       // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
       var modal = $(this)
-      modal.find('.modal-title').text('New message to ' + recipient)
+      modal.find('.modal-title').text('Add new product')
       modal.find('.modal-body input').val(recipient)
 
       // Save Product To Catalogue
-      $("#saveToCatalog-button").on("click", function () {
+      $("#saveToCatalog-button").on("click", function() {
         // Add product to catalog
         alert("Saved to Catalog.");
         // Dismiss the modal pop-up
