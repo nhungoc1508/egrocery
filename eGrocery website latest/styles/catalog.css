@@ -69,7 +69,23 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin-top: -25px; */
+    z-index: 10;
+}
+
+#cart-button {
+    font-size: 25px;
+    background-color: olive;
+    height: 50px;
+    width: 50px;
     margin-top: -25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 0;
+    outline: 0;
+    border-radius: 50%;
     z-index: 10;
 }
 
