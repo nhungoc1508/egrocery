@@ -46,7 +46,22 @@
                     </li>
                     <li class="nav-item">
                         <!-- <a class="nav-link shopping-cart-img" href="shoppingcart.php"><img src="../images/shopping-cart.png" alt="Shopping cart"></a> -->
-                        <a class="nav-link" href="shoppingcart.php"><i class="fas fa-shopping-cart"></i>0</a>
+                        <a class="nav-link" href="shoppingcart.php"><i class="fas fa-shopping-cart"></i>
+                        <?php
+                        
+                        include('database.php');
+
+                        $user_id = $_COOKIE['user_id'];
+
+                        $select_query = "SELECT * FROM `users_products` WHERE `user_id` = '$user_id' ";
+
+                        $count = mysqli_query($con,$select_query);
+
+                        $rowcount=mysqli_num_rows($count);
+
+                        
+                        
+                        print $rowcount; ?></a>
                     </li>
                 <?php } ?>
                 <?php if (!$_COOKIE["loggedIn"]) { ?>

@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <?php
 include("new_navbar.php");
+
+
 include("header_category.php");
 include("database.php");
-
 $total = 0;
+$count = 0;
 // include("new_header.php");
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+
 
 <head>
     <!-- Required meta tags -->
@@ -52,11 +56,13 @@ $total = 0;
                 </div>
             </div>
             <?php
+            
 
             // 
             $user_id = $_COOKIE['user_id'];
 
             $select_query = "SELECT * FROM `users_products` WHERE `user_id` = '$user_id'";
+
 
 
 
@@ -107,6 +113,8 @@ $total = 0;
                         <div class="col-md-2">
                             <p class="lead">AED <?php print $product_price; 
                             $total = $total + $product_price;
+                            $count = $count + 1;
+                            
                              
                              ?></p>
                         </div>
@@ -125,8 +133,13 @@ $total = 0;
 
 
                 }
+                
             }
 
+
+
+            
+            
 
 
 
@@ -197,6 +210,10 @@ $total = 0;
     </div>
     <?php
     include("new_footer.php");
+    
+    
+
+   
 
     ?>
 
