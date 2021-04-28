@@ -33,35 +33,39 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact.php">Contact</a>
                 </li>
-                <!-- MAKE THIS TAB INVISIBLE FOR CUSTOMERS! -->
-                <li class="nav-item">
-                    <a class="nav-link" href="admin.php">Admin</a>
-                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <?php if ($_COOKIE["loggedIn"]) { ?>
+                    <?php if ($_COOKIE["name"] == "admin") { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.php">Admin</a>
+                        </li>
+                    <?php } else { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="account.php"><i class="fas fa-user"></i> Hello, <?php echo $_COOKIE["name"] ?></a>
+                        </li>
+                    <?php } ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="account.php"><i class="fas fa-user"></i> Hello, <?php echo $_COOKIE["name"] ?></a>
-                        <a class="nav-link" href="logout.php">Logout</a>
+                        <a class="nav-link" href="logout.php">Log out</a>
                     </li>
                     <li class="nav-item">
                         <!-- <a class="nav-link shopping-cart-img" href="shoppingcart.php"><img src="../images/shopping-cart.png" alt="Shopping cart"></a> -->
                         <a class="nav-link" href="shoppingcart.php"><i class="fas fa-shopping-cart"></i>
-                        <?php
-                        
-                        include('database.php');
+                            <?php
 
-                        $user_id = $_COOKIE['user_id'];
+                            include('database.php');
 
-                        $select_query = "SELECT * FROM `users_products` WHERE `user_id` = '$user_id' ";
+                            $user_id = $_COOKIE['user_id'];
 
-                        $count = mysqli_query($con,$select_query);
+                            $select_query = "SELECT * FROM `users_products` WHERE `user_id` = '$user_id' ";
 
-                        $rowcount=mysqli_num_rows($count);
+                            $count = mysqli_query($con, $select_query);
 
-                        
-                        
-                        print $rowcount; ?></a>
+                            $rowcount = mysqli_num_rows($count);
+
+
+
+                            print $rowcount; ?></a>
                     </li>
                 <?php } ?>
                 <?php if (!$_COOKIE["loggedIn"]) { ?>

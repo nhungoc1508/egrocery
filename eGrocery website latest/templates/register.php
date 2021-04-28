@@ -60,7 +60,7 @@ include("new_navbar.php");
                                     <div class="form-group">
                                         <label for="password-input">Password</label>
                                         <div class="input-group">
-                                            <input class="password-strength__input form-control" type="password" id="password-input" aria-describedby="passwordHelp" placeholder="Enter password" />
+                                            <input class="password-strength__input form-control" type="password" name="password" id="password-input" aria-describedby="passwordHelp" placeholder="Enter password" required/>
                                             <div class="input-group-append">
                                                 <button class="password-strength__visibility btn btn-outline-secondary" type="button"><span class="password-strength__visibility-icon" data-visible="hidden"><i class="fas fa-eye-slash"></i></span><span class="password-strength__visibility-icon js-hidden" data-visible="visible"><i class="fas fa-eye"></i></span></button>
                                             </div>
