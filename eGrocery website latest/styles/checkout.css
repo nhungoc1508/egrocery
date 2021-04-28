@@ -33,3 +33,32 @@
 .md-form {
     margin-bottom: 1rem;
 }
+
+/* Payment card CSS */
+.rounded {
+    border-radius: 1rem
+}
+
+.nav-pills .nav-link {
+    color: #555
+}
+
+.nav-pills .nav-link.active {
+    color: white
+}
+
+input[type="radio"] {
+    margin-right: 5px
+}
+
+.bold {
+    font-weight: bold
+}
+
+.card-billing {
+    padding: 1.5rem 2rem;
+}
+
+.payment-row {
+    text-align: right;
+}
