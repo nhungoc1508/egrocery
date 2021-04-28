@@ -21,59 +21,76 @@ include("new_navbar.php");
 </head>
 
 <body>
-    <div class="container-form container justify-content-center" style="opacity: 0.9; background-color:#D4B563; margin-top:3%; box-shadow: 3px 6px white; ">
-        <form action="register_new_user.php" method="POST" class="password-strength">
-            <div class="display-4 form-title">Register</div>
-            <div class="form-group">
-                <label for="fname">First Name</label>
-                <input type="text" class="form-control" id="fname" name="first_name" aria-describedby="firstNameHelp" placeholder="Enter first name" required>
-            </div>
-            <div class="form-group">
-                <label for="lname">Last Name</label>
-                <input type="text" class="form-control" id="lname" name="last_name" aria-describedby="lastNameHelp" placeholder="Enter last name" required>
-            </div>
-            <!-- <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="phoneHelp" placeholder="Enter phone number" required>
-            </div> -->
-            <!-- <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address" aria-describedby="addressHelp" placeholder="Enter address" required>
-            </div> -->
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
-                <small id="emailHelp" class="form-text text-muted">**We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" placeholder="Enter username" required>
-            </div>
-            <!-- <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password" required>
-            </div> -->
-            <div class="form-group">
-                <label for="password-input">Password</label>
-                <div class="input-group">
-                    <input class="password-strength__input form-control" type="password" id="password-input" aria-describedby="passwordHelp" placeholder="Enter password" />
-                    <div class="input-group-append">
-                        <button class="password-strength__visibility btn btn-outline-secondary" type="button"><span class="password-strength__visibility-icon" data-visible="hidden"><i class="fas fa-eye-slash"></i></span><span class="password-strength__visibility-icon js-hidden" data-visible="visible"><i class="fas fa-eye"></i></span></button>
+    <div class="container product-ctn col-8">
+        <div class="">
+            <div class="row mb-4 ">
+                <div class="col-12" id="right-ctn">
+                    <div class="col-12">
+                        <div class="content-section">
+                            <div class="row justify-content-center">
+                                <p class="display-4 product-name">Register</p>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="row justify-content-center">
+                                <p class="lead">Start shopping with us today</p>
+                            </div>
+                        </div>
+                        <div class="content-section row justify-content-center">
+                            <div class="col-8">
+                                <form action="register_new_user.php" method="POST" class="password-strength lead">
+                                    <!-- <div class="display-4 form-title">Register</div> -->
+                                    <div class="form-group">
+                                        <label for="fname">First name</label>
+                                        <input type="text" class="form-control" id="fname" name="first_name" aria-describedby="firstNameHelp" placeholder="Enter first name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lname">Last name</label>
+                                        <input type="text" class="form-control" id="lname" name="last_name" aria-describedby="lastNameHelp" placeholder="Enter last name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email address</label>
+                                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                        <small id="emailHelp" class="form-text text-muted">*We'll never share your email with anyone else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" id="username" name="username" aria-describedby="usernameHelp" placeholder="Enter username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password-input">Password</label>
+                                        <div class="input-group">
+                                            <input class="password-strength__input form-control" type="password" id="password-input" aria-describedby="passwordHelp" placeholder="Enter password" />
+                                            <div class="input-group-append">
+                                                <button class="password-strength__visibility btn btn-outline-secondary" type="button"><span class="password-strength__visibility-icon" data-visible="hidden"><i class="fas fa-eye-slash"></i></span><span class="password-strength__visibility-icon js-hidden" data-visible="visible"><i class="fas fa-eye"></i></span></button>
+                                            </div>
+                                        </div>
+                                        <small class="password-strength__error text-danger js-hidden">
+                                            <!-- Add error text here -->
+                                        </small>
+                                        <small class="form-text text-muted mt-2" id="passwordHelp">Add 9 characters or more, lowercase letters, uppercase letters, numbers and symbols to make the password really strong!</small>
+                                    </div>
+                                    <div class="password-strength__bar-block progress mb-4">
+                                        <div class="password-strength__bar progress-bar bg-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                                        <label class="form-check-label" for="exampleCheck1">I agree to the following <a tabindex="0" class="" role="button" data-toggle="popover" data-trigger="focus" title="Terms & Conditions" data-content="I agree to give each member of this project a final grade of A.">terms and conditions.</a></label>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <button type="submit" class="submit-btn mb-2">Create account</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <small class="password-strength__error text-danger js-hidden"> <!-- Add error text here --> </small>
-                <small class="form-text text-muted mt-2" id="passwordHelp">Add 9 characters or more, lowercase letters, uppercase letters, numbers and symbols to make the password really strong!</small>
             </div>
-            <div class="password-strength__bar-block progress mb-4">
-                <div class="password-strength__bar progress-bar bg-danger" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">I agree to the following <a tabindex="0" class="" role="button" data-toggle="popover" data-trigger="focus" title="Terms & Conditions" data-content="I agree to give each member of this project a final grade of A.">terms and conditions.</a></label>
-            </div>
-            <button type="submit" class="btn btn-primary">Create Account</button>
-        </form>
+        </div>
     </div>
+    <?php
+    include("new_footer.php");
+    ?>
     <!-- JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS, then custom password javascript -->
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>

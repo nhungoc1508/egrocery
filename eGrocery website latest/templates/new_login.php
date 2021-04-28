@@ -44,39 +44,64 @@ include("new_navbar.php");
 </head>
 
 <body>
-    <div class="container-form container justify-content-center" style="opacity: 0.9; background-color:#D4B563; margin-top:7%; box-shadow: 3px 6px white;">
-        <form action="authenticate.php" method="POST">
-            <div class="display-4 form-title">Login</div>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" name="username" id="username" aria-describedby="usernameHelp" placeholder="Enter username" required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password" required>
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="rememberMe">
-                <label class="form-check-label" for="rememberMe">Remember me</label>
-            </div>
+    <div class="container product-ctn col-8">
+        <div class="">
+            <div class="row mb-4 ">
+                <div class="col-12" id="right-ctn">
+                    <div class="col-12">
+                        <div class="content-section">
+                            <div class="row justify-content-center">
+                                <p class="display-4 product-name">Log in</p>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="row justify-content-center">
+                                <p class="lead">Continue shopping with us</p>
+                            </div>
+                        </div>
+                        <div class="content-section row justify-content-center">
+                            <div class="col-8">
+                                <form action="authenticate.php" method="POST" class="lead">
+                                    <!-- <div class="display-4 form-title">Login</div> -->
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" name="username" id="username" aria-describedby="usernameHelp" placeholder="Enter username" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password" required>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <button type="submit" class="submit-btn mb-2">Log in</button>
+                                    </div>
+                                </form>
+                                <!-- PHP Starts here -->
+                                <?php
+                                if ($_GET['error']) {
+                                    // file_put_contents($filename,'Unsuccessful login -> '.$_GET['error']."\n", FILE_APPEND);
 
-            <button type="submit" class="btn btn-primary">Log in</button>
-        </form>
-        <!-- PHP Starts here -->
-        <?php
-        if ($_GET['error']) {
-            // file_put_contents($filename,'Unsuccessful login -> '.$_GET['error']."\n", FILE_APPEND);
 
-
-            if ($_GET['error'] == 'invalidPassword') {
-                print "<p class='error'>Invalid Password!</p>";
-            }
-            else if ($_GET['error'] == 'invalidUsernamePassword') {
-                print "<p class='error'>Invalid Username or Password!</p>";
-            }
-        }
-        ?>
+                                    if ($_GET['error'] == 'invalidPassword') {
+                                        print "<p class='error'>Invalid Password!</p>";
+                                    } else if ($_GET['error'] == 'invalidUsernamePassword') {
+                                        print "<p class='error'>Invalid Username or Password!</p>";
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <?php
+    include("new_footer.php");
+    ?>
 </body>
 
 </html>

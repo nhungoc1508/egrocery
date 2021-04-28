@@ -54,7 +54,7 @@
                         <a class="nav-link" href="new_login.php">Log in</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="register.php">Sign up</a>
+                        <a class="nav-link" href="register.php">Register</a>
                     </li>
                 <?php } ?>
             </ul>
