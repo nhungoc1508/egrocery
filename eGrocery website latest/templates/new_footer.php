@@ -26,7 +26,6 @@
                             <div class="d-flex">
                                 <h1 class="display-5">eGrocery</h1>
                             </div>
-                            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi non pariatur numquam animi nam at impedit odit nisi.</p>
                             <div class="divider mb-4"> </div>
                             <h5 class="display-5">Contact</h5>
                             <ul class="no-bullets">
@@ -42,24 +41,24 @@
                 <div class="col-md-3 col-sm-4 col-xs-4">
                     <h5 class="display-5">Categories</h5>
                     <ul class="no-bullets">
-                        <li>Beverages</li>
-                        <li>Dairy</li>
-                        <li>Desserts</li>
-                        <li>Dry goods</li>
-                        <li>Fruits</li>
-                        <li>Vegetables</li>
-                        <li>Meat</li>
+                        <li><a class="nav-link" href="homepage.php?category=Beverages">Beverages</a></li>
+                        <li><a class="nav-link" href="homepage.php?category=Dairy">Dairy</a></li>
+                        <li><a class="nav-link" href="homepage.php?category=Desserts">Desserts</a></li>
+                        <li><a class="nav-link" href="homepage.php?category=Dry good">Dry goods</a></li>
+                        <li><a class="nav-link" href="homepage.php?category=Fruits">Fruits</a></li>
+                        <li><a class="nav-link" href="homepage.php?category=Vegetables">Vegetables</a></li>
+                        <li><a class="nav-link" href="homepage.php?category=Meat">Meat</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-4 col-xs-4">
                     <h5 class="display-5">Information</h5>
                     <ul class="no-bullets">
-                        <li>About us</li>
-                        <li>Contact</li>
-                        <li>Terms & conditions</li>
-                        <li>Return & exchange</li>
-                        <li>Shipping & delivery</li>
-                        <li>Privacy policy</li>
+                        <li><a class="nav-link" href="about.php">About us</a></li>
+                        <li><a class="nav-link" href="contact.php">Contact</a></li>
+                        <li><a class="nav-link" href="">Terms & Conditions</a></li>
+                        <li><a class="nav-link" href="">Return & Exchange</a></li>
+                        <li><a class="nav-link" href="">Shipping & Delivery</a></li>
+                        <li><a class="nav-link" href="">Privacy policy</a></li>
                     </ul>
                 </div>
             </div>

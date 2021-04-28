@@ -39,18 +39,23 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="account.php"><i class="fas fa-user"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="new_login.php">Log in</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.php">Sign up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link shopping-cart-img" href="shoppingcart.php"><img src="../images/shopping-cart.png" alt="Shopping cart"></a>
-                </li>
+                <?php if ($_COOKIE["loggedIn"] == "yes") { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="account.php"><i class="fas fa-user"></i> Hello, <?php echo $_COOKIE["name"] ?></a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a class="nav-link shopping-cart-img" href="shoppingcart.php"><img src="../images/shopping-cart.png" alt="Shopping cart"></a> -->
+                        <a class="nav-link" href="shoppingcart.php"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                <?php } ?>
+                <?php if ($_COOKIE["loggedIn"] == "no") { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="new_login.php">Log in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.php">Sign up</a>
+                    </li>
+                <?php } ?>
             </ul>
         </div>
     </nav>

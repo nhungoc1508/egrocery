@@ -40,6 +40,20 @@ html, body {
     left: 0;
 }
 
+.shopping-cart-icon {
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: black;
+    background-color: #AF7F02;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -25px;
+    z-index: 10;
+}
+
 .gradient {
     border-radius: 0;
     background: #D4B563;
