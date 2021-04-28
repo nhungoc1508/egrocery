@@ -18,6 +18,7 @@ $row = mysqli_fetch_array($select_query_result);
 if ($username == $row['user_name'] && $password == $row['password']){
     setcookie('loggedIn','yes');
     $name = $row['first_name'];
+    setcookie('user_id',$row['id']);
 
     setcookie('name',$name);
     header("Location: homepage.php?login=$name");
