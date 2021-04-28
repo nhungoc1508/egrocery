@@ -3,6 +3,7 @@
 
 <?php
 include("new_navbar.php");
+include("header_category.php");
 include("database.php");
 // include("new_header.php");
 ?>
@@ -23,10 +24,12 @@ include("database.php");
 
 <body>
     <div class="container cart-ctn justify-content-center">
-        <h3 class="cart-title">Shopping Cart</h3>
+        <div class="row justify-content-center">
+            <p class="display-4 cart-title">Shopping cart</p>
+        </div>
 
-        
-       
+
+
 
         <div class="Box mb-3">
             <div class="Box-header Box-header--blue position-relative">
@@ -53,14 +56,14 @@ include("database.php");
 
             $select_query = "SELECT * FROM `users_products` WHERE `user_id` = '$user_id'";
 
-            
-            
 
-            $select_query_result = mysqli_query($con,$select_query) or die(mysqli_error($con));
+
+
+            $select_query_result = mysqli_query($con, $select_query) or die(mysqli_error($con));
             // echo "hello";
 
-            while($product_lists = mysqli_fetch_array($select_query_result)){
-                
+            while ($product_lists = mysqli_fetch_array($select_query_result)) {
+
                 // echo $product_lists['id']."<br>";
                 // echo $product_lists['product_id']."<br>";
                 // echo $product_lists['user_id']."<br>";
@@ -68,14 +71,14 @@ include("database.php");
                 $product_id = $product_lists['product_id'];
 
                 $product_result = "SELECT * FROM `eGrocery`.`products` WHERE `id` = '$product_id'";
-                $select_query_product_result = mysqli_query($con,$product_result) or die(mysqli_error($con));
+                $select_query_product_result = mysqli_query($con, $product_result) or die(mysqli_error($con));
                 // $items = mysqli_fetch_array($product_result);
                 // echo $items['id'];
                 // echo $items['product_name'];
                 // echo $items['product_price'];
                 // echo $items['category'];
                 // echo $items['availability'];
-                while($items = mysqli_fetch_array($select_query_product_result)){
+                while ($items = mysqli_fetch_array($select_query_product_result)) {
                     // echo $items['id'];
                     // echo $items['product_name'];
                     // echo $items['product_price'];
@@ -88,31 +91,19 @@ include("database.php");
                     $availability = $items['availability'];
                     $img_url = $items['img_url'];
 
-                    ?>
+            ?>
                     <div class="row product-row">
                         <div class="col-md-2">
-                        <!--  -->
-                        
-                            <!-- <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="50" class='product-card' style="background: linear-gradient(to right, #F2F2EA, white)">
-                                <div class='product-img-ctn d-flex justify-content-center'>
-                                    <img src=<?php echo $img_url; ?> alt=<?php echo $row['product_name']; ?>>
-                                        <div class="d-flex detail-btn">
-                                            <form action="product.php">
-                                                <input type="hidden" name="search_product" value="<?php echo $row['id']; ?>">
-                                                <input class="see-detail lead" type="submit" value="SEE DETAILS">
-                                            </form>
-                                        </div>
-                                </div>
-                            </div> -->
-                            <!--  -->
-                            
+                            <div class="product-img">
+                                <img src="<?php echo $img_url; ?>" alt="<?php echo $row['product_name']; ?>">
+                            </div>
                         </div>
                         <div class="col-md-4">
-                            <h4 class="product-name"><?php print $product_name; ?></h4>
-                            <p class="category"><?php print $category; ?></p>
+                            <h4 class="text-capitalize product-name"><?php print $product_name; ?></h4>
+                            <p class="text-uppercase category"><?php print $category; ?></p>
                         </div>
                         <div class="col-md-2">
-                            <?php print $product_price; ?>
+                            <p class="lead">AED <?php print $product_price; ?></p>
                         </div>
                         <div class="col-md-2">
                             <input type="number" class="form-control" id="quantity" aria-describedby="quantityHelp" placeholder="Quantity" required>
@@ -124,19 +115,18 @@ include("database.php");
                     </div>
 
 
-                <?php    
+            <?php
 
 
 
                 }
-
             }
 
 
 
 
             // 
-            
+
             ?>
             <!-- <div class="row product-row">
                 <div class="col-md-2">
@@ -201,7 +191,7 @@ include("database.php");
         </table> -->
     </div>
     <?php
-        include("new_footer.php");
+    include("new_footer.php");
 
     ?>
 

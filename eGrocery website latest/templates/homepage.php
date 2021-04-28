@@ -34,14 +34,17 @@ else{
    product_price
 
   DESC
-  LIMIT 12";
+  LIMIT 8";
 
 include("new_header.php");
+include("homepage_content_promo.php");
+include("homepage_content_title.php");
 }
 
  $select_query_result = mysqli_query($con,$select_query) or die(mysqli_error($con));
 
-include("catalog.php");
+include("homepage_content.php");
+// include("catalog.php");
 
 include("new_footer.php");
 

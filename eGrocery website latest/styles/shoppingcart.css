@@ -1,5 +1,5 @@
 body {
-        /* background-image: url("../images/shoppingcartbackground.jpg"); */
+    /* background-image: url("../images/shoppingcartbackground.jpg"); */
     /* Makes sure the background image covers the whole element */
     background-attachment: fixed;
     background-size: cover;
@@ -8,10 +8,12 @@ body {
 .cart-title {
     text-align: center;
     margin-bottom: 3rem;
+    font-family: 'Hammersmith One', sans-serif;
+    background: linear-gradient(to bottom, #D4B563 50%, transparent 50%);
 }
 
 .cart-ctn {
-    /* margin: 5% 0 5% 0; */
+    margin: 5% 0 5% 0;
     padding-top: 50px;
     padding-bottom: 50px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
@@ -24,9 +26,10 @@ body {
     border-width: thin;
     padding: 10px 0;
 }
+
 .title-row div {
     font-weight: bold;
-}   
+}
 
 .product-row {
     border: silver;
@@ -41,9 +44,7 @@ body {
     background: blue;
 }
 
-.product-name {
-
-}
+.product-name {}
 
 #quantity {
     width: 70%;
@@ -56,6 +57,7 @@ body {
 .subtotal-text {
     text-align: right;
 }
+
 .subtotal-price {
     text-align: right;
 }
@@ -63,4 +65,15 @@ body {
 .btn-checkout {
     margin-top: 1rem;
     float: right;
+}
+
+.product-img {
+    height: 150px;
+    width: 150px;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
