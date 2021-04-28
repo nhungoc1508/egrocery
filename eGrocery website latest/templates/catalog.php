@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="../styles/catalog.css">
     <!-- AOS - animate on scroll library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- bring in the jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
     <title></title>
 </head>
 
@@ -37,8 +40,13 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <?php if ($row['availability'] == 'In stock') { ?>
-                            <i class="fas fa-cart-arrow-down shopping" id="shopping-cart-icon"></i>
+                        <?php if ($row['availability'] == 'In stock') {  ?>
+                            <form action="add_to_cart.php" method="POST">
+                                <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
+                                <!-- <a href="" name="product_id" value="<?php echo $row['id']; ?>" style="text-decoration:none; z-index:10;"><i class="fas fa-cart-arrow-down shopping" id="shopping-cart-icon"></i></a> -->
+                                <button type="submit" style="border:none ;padding:0; outline:0;"><i class="fas fa-cart-arrow-down shopping" id="shopping-cart-icon"></i></button>
+                            </form>
+                          
                         <?php } ?>
                         <?php if ($row['availability'] == 'Out of stock') { ?>
                             <i class="fas fa-cart-arrow-down shopping" id="shopping-cart-icon-unavail"></i>
