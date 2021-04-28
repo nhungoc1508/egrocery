@@ -3,6 +3,8 @@
 <?php
 // Navbar added to top
 include("new_navbar.php");
+include("header_category.php");
+include("database.php");
 ?>
 
 <head>
@@ -21,13 +23,22 @@ include("new_navbar.php");
 </head>
 
 <body class="text-center">
+    <?php
+    $user_id = $_COOKIE['user_id'];
 
+    $select_query = "SELECT * FROM `users` WHERE `id` = '$user_id'";
+
+
+    $select_query_result = mysqli_query($con, $select_query) or die(mysqli_error($con));
+    $result = $select_query_result;
+    $row = mysqli_fetch_array($result);
+    ?>
     <div class="row d-flex justify-content-center admin-title">
         <div class="container-fluid">
             <h1>MY ACCOUNT</h1>
         </div>
         <div class="container-fluid">
-            <h3>Welcome home, [insert name here]</h3>
+            <h3>Welcome home, <?php echo $row['first_name']; ?></h3>
         </div>
     </div>
 
@@ -120,7 +131,7 @@ include("new_navbar.php");
 
 
     <!-- Info Tab Container -->
-    <div class="tab-container info-tab">
+    <!-- <div class="tab-container info-tab">
         <h3 id="admin-info-header">Update Website Information</h3>
         <div class="about-group">
             <h4>About Us Information</h4>
@@ -136,8 +147,78 @@ include("new_navbar.php");
                 <button class="btn btn-primary btn-lg admin-saveinfo-btn">Save</button>
             </div>
         </div>
-    </div>
+    </div> -->
 
+    <div class="container product-ctn col-8 tab-container info-tab">
+        <div class="">
+            <div class="row mb-4 ">
+                <div class="col-12" id="right-ctn">
+                    <div class="col-12">
+                        <div class="content-section">
+                            <div class="row justify-content-center">
+                                <p class="lead">Update my information</p>
+                            </div>
+                        </div>
+                        <div class="content-section row justify-content-center">
+                            <div class="col-8">
+                                <form action="#" method="POST" class="lead">
+                                    <!-- <div class="display-4 form-title">Login</div> -->
+                                    <div class="form-group">
+                                        <label class="row" for="fname">First name</label>
+                                        <div class="row">
+                                            <input type="text" class="form-control col-11" id="fname" name="first_name" aria-describedby="firstNameHelp" placeholder="<?php echo $row['first_name']; ?>" readonly>
+                                            <button type="button" class="submit-btn col-1 ml-auto" id="editFName" /><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="row" for="lname">Last name</label>
+                                        <div class="row">
+                                            <input type="text" class="form-control col-11" id="lname" name="last_name" aria-describedby="lastNameHelp" placeholder="<?php echo $row['last_name']; ?>" readonly>
+                                            <button type="button" class="submit-btn col-1 ml-auto" id="editLName" /><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="row" for="email">Email address</label>
+                                        <div class="row">
+                                            <input type="email" class="form-control col-11" id="email" name="email" aria-describedby="emailHelp" placeholder="<?php echo $row['email']; ?>" readonly>
+                                            <button type="button" class="submit-btn col-1 ml-auto" id="editEmail" /><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="row" for="username">Username</label>
+                                        <div class="row">
+                                            <input type="text" class="form-control col-11" id="username" name="username" aria-describedby="usernameHelp" placeholder="<?php echo $row['user_name']; ?>" readonly>
+                                            <button type="button" class="submit-btn col-1 ml-auto" id="editUsername" /><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="row" for="phone">Phone number</label>
+                                        <div class="row">
+                                            <input type="text" class="form-control col-11" id="phone" name="phone" aria-describedby="phoneeHelp" placeholder="<?php echo $row['phone']; ?>" readonly>
+                                            <button type="button" class="submit-btn col-1 ml-auto" id="editPhone" /><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="row" for="phone">Address</label>
+                                        <div class="row">
+                                            <input type="text" class="form-control col-11" id="address" name="address" aria-describedby="addresselp" placeholder="<?php echo $row['address']; ?>" readonly>
+                                            <button type="button" class="submit-btn col-1 ml-auto" id="editAddress" /><i class="fas fa-edit"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <button type="submit" class="submit-btn mb-2">Update</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+    include("new_footer.php");
+    ?>
 
     <!-- JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -173,6 +254,27 @@ include("new_navbar.php");
                     alert("Other tab selected");
             }
         }
+
+        $(function() {
+            $("#editFName").click(function() {
+                $('#fname').removeAttr("readonly");
+            });
+            $("#editLName").click(function() {
+                $('#lname').removeAttr("readonly");
+            });
+            $("#editEmail").click(function() {
+                $('#email').removeAttr("readonly");
+            });
+            $("#editUsername").click(function() {
+                $('#username').removeAttr("readonly");
+            });
+            $("#editPhone").click(function() {
+                $('#phone').removeAttr("readonly");
+            });
+            $("#editAddress").click(function() {
+                $('#address').removeAttr("readonly");
+            });
+        })
     </script>
 </body>
 
