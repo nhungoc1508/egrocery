@@ -43,10 +43,10 @@
                         <?php if ($row['availability'] == 'In stock') {  ?>
                             <form action="add_to_cart.php" method="POST">
                                 <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
-                                <!-- <a href="" name="product_id" value="<?php echo $row['id']; ?>" style="text-decoration:none; z-index:10;"><i class="fas fa-cart-arrow-down shopping" id="shopping-cart-icon"></i></a> -->
+                                
                                 <button type="submit" id="cart-button"><i class="fas fa-cart-arrow-down shopping" id="shopping-cart-icon"></i></button>
                             </form>
-                          
+
                         <?php } ?>
                         <?php if ($row['availability'] == 'Out of stock') { ?>
                             <i class="fas fa-cart-arrow-down shopping" id="shopping-cart-icon-unavail"></i>

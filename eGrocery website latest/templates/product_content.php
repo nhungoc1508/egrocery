@@ -22,12 +22,14 @@
     <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="50" class="container product-ctn">
         <div class="">
             <?php
-            if ($select_query_result) {
+            // if ($select_query_result) {
 
-                $result = $select_query_result;
-            } else {
-                $result = "SELECT * FROM `products`";
-            }
+            //     $result = $select_query_result;
+            // } else {
+            //     $result = "SELECT * FROM `products`";
+            // }
+            $result = $select_query_result;
+
             while ($row = mysqli_fetch_array($result)) { ?>
                 <div class="row mb-4 ">
                     <div class="col-12 col-lg-6">
@@ -56,10 +58,10 @@
                                 <div class="row">
                                     <p class="lead"><strong>AED <?php echo $row['product_price']; ?></strong></p>
                                 </div>
-                                <form class="row d-flex justify-content-between">
+                                <form class="row d-flex justify-content-between" method="POST" action="add_to_cart.php">
                                     <div>
                                         <label for="quantity-select">Quantity:</label>
-                                        <select name="quantity" id="quantity-select" class="form-select form-select-lg">
+                                        <select id="quantity-select" class="form-select form-select-lg">
                                             <option value=1 selected>1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -73,7 +75,11 @@
                                         </select>
                                     </div>
                                     <?php if ($row['availability'] == 'In stock') { ?>
-                                        <button class="add-to-cart-btn" type="submit"><i class="fas fa-cart-arrow-down"></i> Add to cart</button>
+                                        
+                                            <input type="hidden" name="product_id" value="<?php echo $row['id']; ?>">
+                                            <button class="add-to-cart-btn" type="submit"><i class="fas fa-cart-arrow-down"></i> Add to cart</button>
+                                        
+                                        
                                     <?php } ?>
                                     <?php if ($row['availability'] == 'Out of stock') { ?>
                                         <button disabled class="add-to-cart-btn" type="submit"><i class="fas fa-bullhorn"></i> Get notification</button>
