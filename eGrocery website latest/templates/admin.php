@@ -25,7 +25,16 @@ $result = $select_query_result;
 </head>
 
 <body class="text-center">
-
+  <?php if ($_COOKIE["loggedIn"]) {
+    if ($_COOKIE["name"] != "admin") {
+  ?>
+      <div class="row d-flex justify-content-center admin-title">
+        <h1>You do not have access to this page.</h1>
+      </div>
+  <?php
+    }
+  else {
+  ?>
   <div class="row d-flex justify-content-center admin-title">
     <h1>ADMIN PANEL</h1>
   </div>
@@ -361,6 +370,7 @@ $result = $select_query_result;
       </div>
     </div>
   </div>
+  <?php } }?>
 
 
   <!-- JavaScript -->
@@ -410,8 +420,8 @@ $result = $select_query_result;
           $(".orders-tab").hide();
           break;
 
-        default:
-          alert("Other tab selected");
+        // default:
+        //   alert("Other tab selected");
       }
     }
 
