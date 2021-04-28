@@ -64,12 +64,36 @@ html, body {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: white;
+    color: black;
+    background-color: #AF7F02;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: -25px;
     z-index: 10;
+}
+
+#shopping-cart-icon:hover {
+    color: white;
+    background-color: black;
+}
+
+#shopping-cart-icon-unavail {
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: white;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -25px;
+    z-index: 10;
+}
+
+.out-of-stock-icon {
+    opacity: 0.8;
 }
 
 .product-card>p {
@@ -132,4 +156,12 @@ html, body {
 
 .not-found-ctn > a {
     text-decoration: none;
+}
+
+.in-stock {
+    color: green;
+}
+
+.out-of-stock {
+    color: red;
 }

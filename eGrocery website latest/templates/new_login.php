@@ -17,6 +17,8 @@ include("new_navbar.php");
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/register.css">
+    <link rel="stylesheet" href="../styles/login.css">
+
     <style media="screen">
         <?php
         if ($_GET['error']) {
@@ -45,7 +47,7 @@ include("new_navbar.php");
 
 <body>
     <div class="container-form container justify-content-center">
-        <form action="authenticate.php" method="post">
+        <form action="authenticate.php" method="post" class="jumbotron">
             <div class="display-4 form-title">Login</div>
             <div class="form-group">
                 <label for="username">Username</label>
@@ -53,13 +55,19 @@ include("new_navbar.php");
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="rememberMe">
                 <label class="form-check-label" for="rememberMe">Remember me</label>
             </div>
             <button type="submit" class="btn btn-primary">Log in</button>
+            <div class="container cancel_forgot" style="background-color:#fff">
+            
+                <div class="cancelbtnA"><a href="homepage.php" class="cancelbtn" >Cancel</a></div>
+            
+                <div class="psw">Forgot <a href="#">password?</a></div>
+            </div>
         </form>
         <!-- PHP Starts here -->
         <?php

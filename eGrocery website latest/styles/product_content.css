@@ -53,3 +53,11 @@
     background-color: black;
     color: white;
 }
+
+.in-stock {
+    color: green;
+}
+
+.out-of-stock {
+    color: red;
+}

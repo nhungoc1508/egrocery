@@ -37,12 +37,22 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <i class="fas fa-cart-arrow-down" id="shopping-cart-icon"></i>
+                        <?php if ($row['availability'] == 'In stock') { ?>
+                            <i class="fas fa-cart-arrow-down shopping" id="shopping-cart-icon"></i>
+                        <?php } ?>
+                        <?php if ($row['availability'] == 'Out of stock') { ?>
+                            <i class="fas fa-cart-arrow-down shopping" id="shopping-cart-icon-unavail"></i>
+                        <?php } ?>
                     </div>
                     <!-- <p class="product-category text-uppercase"><?php echo $row['category']; ?></p> -->
                     <p class='text-capitalize'><strong><?php echo $row['product_name']; ?></strong></p>
                     <p>AED <?php echo $row['product_price']; ?></p>
-                    <p><small><em><?php echo $row['availability']; ?></em></small></p>
+                    <?php if ($row['availability'] == 'In stock') { ?>
+                        <p class="in-stock"><small><em><?php echo $row['availability']; ?></em></small></p>
+                    <?php } ?>
+                    <?php if ($row['availability'] == 'Out of stock') { ?>
+                        <p class="out-of-stock"><small><em><?php echo $row['availability']; ?></em></small></p>
+                    <?php } ?>
                 </div>
 
             <?php } ?>

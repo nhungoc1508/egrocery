@@ -44,7 +44,11 @@
                                     <p class="display-4 text-capitalize product-name"><?php echo $row['product_name']; ?></p>
                                 </div>
                                 <div class="row">
-                                    <p class="lead"><em><?php echo $row['availability']; ?></em></p>
+                                    <?php if ($row['availability'] == 'In stock') { ?>
+                                        <p class="in-stock"><em><?php echo $row['availability']; ?></em></p>
+                                    <?php } ?>
+                                    <?php if ($row['availability'] == 'Out of stock') { ?>
+                                        <p class="out-of-stock"><em><?php echo $row['availability']; ?>, you can opt in to get notified when product is available.</em></p>                                    <?php } ?>
                                 </div>
                             </div>
                             <div class="content-divider mb-4"> </div>
@@ -68,7 +72,12 @@
                                             <option value="10">10</option>
                                         </select>
                                     </div>
-                                    <button class="add-to-cart-btn" type="submit"><i class="fas fa-cart-arrow-down"></i> Add to cart</button>
+                                    <?php if ($row['availability'] == 'In stock') { ?>
+                                        <button class="add-to-cart-btn" type="submit"><i class="fas fa-cart-arrow-down"></i> Add to cart</button>
+                                    <?php } ?>
+                                    <?php if ($row['availability'] == 'Out of stock') { ?>
+                                        <button disabled class="add-to-cart-btn" type="submit"><i class="fas fa-bullhorn"></i> Get notification</button>
+                                    <?php } ?>
                                 </form>
                             </div>
                             <div class="content-divider mb-4"> </div>
