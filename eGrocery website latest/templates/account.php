@@ -49,11 +49,11 @@ include("database.php");
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mr-auto ml-auto nav-fill w-50 nav-admin">
+                <!-- <li class="nav-item top-nav-item">
+                    <a class="nav-link" href="#">My Orders</a>
+                </li> -->
                 <li class="nav-item top-nav-item">
-                    <a class="nav-link active" href="#">My Orders</a>
-                </li>
-                <li class="nav-item top-nav-item">
-                    <a class="nav-link" href="#">Update Information</a>
+                    <a class="nav-link active" href="#">Update Information</a>
                 </li>
             </ul>
         </div>
@@ -242,7 +242,7 @@ include("database.php");
 
                 case ("My Orders"):
                     $(".info-tab").hide();
-                    $(".orders-tab").show();
+                    $(".orders-tab").hide();
                     break;
 
                 case ("Update Information"):
