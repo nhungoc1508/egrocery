@@ -54,7 +54,9 @@
                     <div class="col-12">
                         <div class="content-section container-fluid flex-column justify-content-between">
                             <div class="row justify-content-center">
-                                <p class="promo-title">8 days left: Extra desserts</p>
+                                <p class="promo-title"><?php include('countdownTimer.php'); ?></p>
+                                <p class="promo-title">left: Extra desserts</p>
+
                             </div>
                             <div class="row justify-content-center">
                                 <p class="lead text-center">Get one dessert of choice for free for every two drinks ordered, limited promotions!</p>
