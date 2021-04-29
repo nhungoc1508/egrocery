@@ -18,6 +18,7 @@ $info_update_submit = mysqli_query($con, $select_query);
 
 echo $info_update_submit;
 if ($info_update_submit == 1) {
+  setcookie('name',$first_name);
   header('Location: account.php?updated=yes');
   exit();
 
