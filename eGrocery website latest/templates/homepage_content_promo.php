@@ -54,7 +54,7 @@
                     <div class="col-12">
                         <div class="content-section container-fluid flex-column justify-content-between">
                             <div class="row justify-content-center">
-                                <p class="promo-title"><?php include('countdownTimer.php'); ?></p>
+                                <p ><?php include('countdownTimer.php'); ?></p>
                                 <p class="promo-title">left: Extra desserts</p>
 
                             </div>
