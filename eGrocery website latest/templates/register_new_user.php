@@ -10,7 +10,7 @@ $password = $_POST['password'];
 
 $select_query = "INSERT INTO `users` (`id`,`first_name`, `last_name`, `phone`, `address`, `email`, `user_name`, `password`) VALUES (NULL,'$first_name', '$last_name', '', '', '$email', '$username', '$password')";
 
-$user_registration_submit = mysqli_query($con, $select_query) or die(mysqli_error($con));
+$user_registration_submit = mysqli_query($con, $select_query);
 
 echo $user_registration_submit;
 if ($user_registration_submit == 1) {

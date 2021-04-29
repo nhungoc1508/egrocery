@@ -35,6 +35,16 @@ include("new_navbar.php");
                             <div class="row justify-content-center">
                                 <p class="lead">Start shopping with us today</p>
                             </div>
+                            <?php 
+                            if($_GET['registered'] == "no"){
+                                ?>
+                            
+                                <div class="row justify-content-center">
+                                    <p class="lead" style="color:red;">Sorry! email or username has already been taken!</p>
+                                </div>
+                            <?php
+                                }
+                            ?>
                         </div>
                         <div class="content-section row justify-content-center">
                             <div class="col-8">
