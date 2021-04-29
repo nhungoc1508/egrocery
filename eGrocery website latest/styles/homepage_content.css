@@ -29,7 +29,7 @@
 }
 
 .product-img {
-    height: 300px;
+    height: 400px;
     width: auto;
 }
 
@@ -39,6 +39,10 @@
     /* float: right; */
     object-fit: cover;
 }
+
+/* #right-img {
+    height: 500px !important;
+} */
 
 .product-name {
     font-family: 'Hammersmith One', sans-serif;

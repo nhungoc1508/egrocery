@@ -11,21 +11,21 @@
    
 }
 .box{
-    border: 1px solid #fff;
+    /* border: 1px solid #fff; */
     background-color:#D4B563;
     border-radius: 20px;
     text-align: center;
     margin: 10px;
     width: 120px;
-    box-shadow: 3px 6px;
-    
+    /* box-shadow: 3px 6px; */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
    
 }
 .content-1,.content-3,.content-5,.content-7{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     color: red;
-    text-shadow: 2px 4px gray;
+    /* text-shadow: 2px 4px gray; */
 }
 </style>
 </head>

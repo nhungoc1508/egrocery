@@ -27,7 +27,7 @@
         <div class="">
             <div class="row mb-4 ">
                 <div class="col-12 col-lg-6" id="left-ctn">
-                    <div class="product-img">
+                    <div class="product-img" id="right-img">
                         <img src='https://images.unsplash.com/photo-1494597564530-871f2b93ac55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2801&q=80' alt=''>
                     </div>
                 </div>
@@ -56,7 +56,6 @@
                             <div class="row justify-content-center">
                                 <p ><?php include('countdownTimer.php'); ?></p>
                                 <p class="promo-title">left: Extra desserts</p>
-
                             </div>
                             <div class="row justify-content-center">
                                 <p class="lead text-center">Get one dessert of choice for free for every two drinks ordered, limited promotions!</p>
