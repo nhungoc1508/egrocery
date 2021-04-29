@@ -14,6 +14,13 @@ $user_registration_submit = mysqli_query($con, $select_query) or die(mysqli_erro
 
 echo $user_registration_submit;
 if ($user_registration_submit == 1) {
+
+  $msg = "Hi ".$first_name.",\n\n"."Greetings from eGrocery!\n"."You have successfully created your account in our eGrocery app. Welcome to the family!"."\n\n"."Warm Regards,\neGrocery family";
+  
+  
+  mail($email,"Feedback",$msg);
+
+ 
   header('Location: new_login.php?registered=yes');
   exit();
 

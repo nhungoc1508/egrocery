@@ -36,19 +36,20 @@
                         </div>
                         <div class="content-section row justify-content-center">
                             <div class="col-6">
-                                <form class="lead">
+                                <form class="lead" action="mail.php" method="POST">
                                     <div class="form-group">
                                         <label for="name">Name</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Your name">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your name">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Your email address">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your email address">
                                     </div>
                                     <div class="form-group">
                                         <label for="inquiry">Feedback</label>
-                                        <textarea class="form-control" id="inquiry" rows="5" placeholder="Your feedback, inquiries, or requests"></textarea>
+                                        <textarea class="form-control" id="inquiry" rows="5" name="feedback" placeholder="Your feedback, inquiries, or requests"></textarea>
                                     </div>
+                                    
                                     <button type="submit" class="submit-btn mb-2"><i class="fas fa-paper-plane"></i> Submit</button>
                                 </form>
                             </div>
