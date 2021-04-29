@@ -51,7 +51,9 @@
                     <li class="nav-item">
                         <!-- <a class="nav-link shopping-cart-img" href="shoppingcart.php"><img src="../images/shopping-cart.png" alt="Shopping cart"></a> -->
                         <a class="nav-link" href="shoppingcart.php"><i class="fas fa-shopping-cart"></i>
+                            <span style="background-color: #D4B563;color:black; box-shadow: 0 0 3px 0; width: 25px; height: 25px; border-radius: 50%; position:absolute; text-align:center; top: 10%; transform:translate(-50%);">
                             <?php
+
 
                             include('database.php');
 
@@ -65,7 +67,9 @@
 
 
 
-                            print $rowcount; ?></a>
+                            print $rowcount; ?>
+                            </span>
+                            </a>
                     </li>
                 <?php } ?>
                 <?php if (!$_COOKIE["loggedIn"]) { ?>
