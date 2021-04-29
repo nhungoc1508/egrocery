@@ -24,7 +24,7 @@
 .content-1,.content-3,.content-5,.content-7{
     font-size: 30px;
     font-weight: bold;
-    color: red;
+    color: #6D4C41;
     /* text-shadow: 2px 4px gray; */
 }
 </style>
